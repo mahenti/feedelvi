@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Premium Agricultural Theme - Earthy & Natural */
+    --background: 43 30% 97%;
+    --foreground: 142 30% 12%;
+    --card: 43 25% 99%;
+    --card-foreground: 142 30% 12%;
+    --popover: 43 25% 99%;
+    --popover-foreground: 142 30% 12%;
+    /* Deep Forest Green - Primary */
+    --primary: 142 45% 24%;
+    --primary-foreground: 43 30% 97%;
+    /* Warm Sand - Secondary */
+    --secondary: 35 30% 92%;
+    --secondary-foreground: 142 30% 12%;
+    --muted: 35 20% 94%;
+    --muted-foreground: 142 15% 40%;
+    /* Golden Wheat - Accent */
+    --accent: 42 75% 50%;
+    --accent-foreground: 142 30% 12%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 43 30% 97%;
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 142 45% 24%;
+    --radius: 0.75rem;
+    /* Custom brand colors */
+    --brand-green: 142 45% 24%;
+    --brand-gold: 42 75% 50%;
+    --brand-cream: 43 30% 97%;
+    --brand-brown: 30 25% 35%;
+  }
+
+  .dark {
+    --background: 142 25% 8%;
+    --foreground: 43 20% 95%;
+    --card: 142 20% 12%;
+    --card-foreground: 43 20% 95%;
+    --popover: 142 20% 12%;
+    --popover-foreground: 43 20% 95%;
+    --primary: 142 40% 45%;
+    --primary-foreground: 142 25% 8%;
+    --secondary: 35 20% 18%;
+    --secondary-foreground: 43 20% 95%;
+    --muted: 35 15% 20%;
+    --muted-foreground: 43 15% 60%;
+    --accent: 42 70% 45%;
+    --accent-foreground: 142 25% 8%;
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 43 20% 95%;
+    --border: 35 15% 22%;
+    --input: 35 15% 22%;
+    --ring: 142 40% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
