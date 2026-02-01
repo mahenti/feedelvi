@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+import { CowFace, SheepFace, PigFace, RabbitFace, ChickenFace, DuckFace } from "./AnimalFaces";
 
 export interface Product {
   id: number;
@@ -7,6 +7,7 @@ export interface Product {
   benefits: string[];
   category: "bovine" | "ovine-caprine" | "porcine" | "lagomorph" | "poultry";
   form: "Pelleted Feed" | "Pellets" | "Crumble";
+  animalType?: "cow" | "sheep" | "pig" | "rabbit" | "chicken" | "duck";
 }
 
 interface ProductCardProps {
@@ -14,89 +15,147 @@ interface ProductCardProps {
   index: number;
 }
 
-const categoryColors: Record<Product["category"], { bg: string; border: string; icon: string }> = {
+const categoryThemes: Record<Product["category"], { 
+  bg: string; 
+  border: string; 
+  badge: string;
+  text: string;
+  accent: string;
+}> = {
   bovine: {
-    bg: "bg-gradient-to-r from-[hsl(142,30%,96%)] to-[hsl(142,20%,98%)]",
-    border: "border-l-[hsl(142,45%,35%)]",
-    icon: "text-[hsl(142,45%,35%)]",
+    bg: "bg-gradient-to-br from-[#F5F9F5] to-[#E8F0E8]",
+    border: "border-[#5B8C5A]",
+    badge: "bg-[#5B8C5A]",
+    text: "text-[#3D5C3D]",
+    accent: "text-[#5B8C5A]",
   },
   "ovine-caprine": {
-    bg: "bg-gradient-to-r from-[hsl(35,30%,96%)] to-[hsl(35,20%,98%)]",
-    border: "border-l-[hsl(35,50%,45%)]",
-    icon: "text-[hsl(35,50%,45%)]",
+    bg: "bg-gradient-to-br from-[#FDF8F3] to-[#F5EFE6]",
+    border: "border-[#B8956C]",
+    badge: "bg-[#B8956C]",
+    text: "text-[#6B5344]",
+    accent: "text-[#B8956C]",
   },
   porcine: {
-    bg: "bg-gradient-to-r from-[hsl(25,30%,96%)] to-[hsl(25,20%,98%)]",
-    border: "border-l-[hsl(25,45%,45%)]",
-    icon: "text-[hsl(25,45%,45%)]",
+    bg: "bg-gradient-to-br from-[#FDF5F5] to-[#F5E6E6]",
+    border: "border-[#C98B8B]",
+    badge: "bg-[#C98B8B]",
+    text: "text-[#6B4444]",
+    accent: "text-[#C98B8B]",
   },
   lagomorph: {
-    bg: "bg-gradient-to-r from-[hsl(280,25%,96%)] to-[hsl(280,15%,98%)]",
-    border: "border-l-[hsl(280,40%,50%)]",
-    icon: "text-[hsl(280,40%,50%)]",
+    bg: "bg-gradient-to-br from-[#F8F5FD] to-[#F0E6F5]",
+    border: "border-[#9B7CB6]",
+    badge: "bg-[#9B7CB6]",
+    text: "text-[#4A3A5C]",
+    accent: "text-[#9B7CB6]",
   },
   poultry: {
-    bg: "bg-gradient-to-r from-[hsl(45,40%,96%)] to-[hsl(45,25%,98%)]",
-    border: "border-l-[hsl(45,80%,45%)]",
-    icon: "text-[hsl(45,80%,45%)]",
+    bg: "bg-gradient-to-br from-[#FDFBF0] to-[#F5F0E0]",
+    border: "border-[#D4A84B]",
+    badge: "bg-[#D4A84B]",
+    text: "text-[#5C4A2A]",
+    accent: "text-[#D4A84B]",
   },
 };
 
+const animalFaceMap: Record<string, React.FC> = {
+  cow: CowFace,
+  sheep: SheepFace,
+  pig: PigFace,
+  rabbit: RabbitFace,
+  chicken: ChickenFace,
+  duck: DuckFace,
+};
+
+const categoryAnimalMap: Record<Product["category"], string[]> = {
+  bovine: ["cow"],
+  "ovine-caprine": ["sheep"],
+  porcine: ["pig"],
+  lagomorph: ["rabbit"],
+  poultry: ["chicken", "duck"],
+};
+
+function getAnimalFace(product: Product, index: number) {
+  if (product.animalType) {
+    const FaceComponent = animalFaceMap[product.animalType];
+    return FaceComponent ? <FaceComponent /> : null;
+  }
+  const animals = categoryAnimalMap[product.category];
+  const animal = animals[index % animals.length] || animals[0];
+  const FaceComponent = animalFaceMap[animal];
+  return FaceComponent ? <FaceComponent /> : null;
+}
+
 export function ProductCard({ product, index }: ProductCardProps) {
-  const colors = categoryColors[product.category];
+  const theme = categoryThemes[product.category];
+  const animalFace = getAnimalFace(product, index);
 
   return (
-    <div
-      className={`group relative overflow-hidden rounded-2xl border-l-4 ${colors.border} ${colors.bg} shadow-sm hover:shadow-xl transition-all duration-500 ease-out hover:-translate-y-1`}
-      style={{
-        animationDelay: `${index * 100}ms`,
-      }}
-    >
-      <div className="flex flex-col lg:flex-row lg:items-stretch">
-        {/* Left side - Product number and icon area */}
-        <div className="lg:w-24 flex lg:flex-col items-center justify-center gap-3 p-6 lg:p-4 border-b lg:border-b-0 lg:border-r border-[hsl(35,20%,85%)] bg-white/50">
-          <span className="text-3xl font-bold text-[hsl(142,30%,25%)]/20">
-            {String(product.id).padStart(2, "0")}
+    <div className={`group relative rounded-3xl border-2 ${theme.border} ${theme.bg} p-5 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl`}>
+      {/* Animal Face Badge */}
+      <div className="absolute -top-6 left-1/2 -translate-x-1/2">
+        <div className={`w-16 h-16 rounded-full ${theme.badge} p-2 shadow-lg border-4 border-white`}>
+          <div className="w-full h-full text-white">
+            {animalFace}
+          </div>
+        </div>
+      </div>
+
+      {/* Card Content */}
+      <div className="pt-10">
+        {/* Product ID Badge */}
+        <div className="flex justify-center mb-3">
+          <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold ${theme.badge} text-white`}>
+            #{String(product.id).padStart(2, "0")}
           </span>
         </div>
 
-        {/* Main content */}
-        <div className="flex-1 p-6 lg:p-8">
-          {/* Header */}
-          <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
-            <div className="flex-1 min-w-[280px]">
-              <h3 className="text-xl lg:text-2xl font-semibold text-[hsl(142,30%,15%)] mb-2 group-hover:text-[hsl(142,45%,24%)] transition-colors">
-                {product.name}
-              </h3>
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[hsl(142,30%,94%)] text-[hsl(142,45%,30%)]">
-                {product.form}
-              </span>
-            </div>
-          </div>
+        {/* Title */}
+        <h3 className={`text-lg font-bold ${theme.text} text-center mb-2 leading-tight`}>
+          {product.name}
+        </h3>
 
-          {/* Description */}
-          <p className="text-[hsl(142,15%,40%)] leading-relaxed mb-6 max-w-3xl">
+        {/* Form Badge */}
+        <div className="flex justify-center mb-4">
+          <span className={`inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-white/60 ${theme.accent} border border-current border-opacity-20`}>
+            {product.form}
+          </span>
+        </div>
+
+        {/* Description - More subtle */}
+        <p className={`text-sm ${theme.text} opacity-70 text-center mb-4 line-clamp-2`}>
+          {product.description}
+        </p>
+
+        {/* Benefits as Badges */}
+        <div className="flex flex-wrap justify-center gap-2">
+          {product.benefits.slice(0, 2).map((benefit, i) => (
+            <span 
+              key={i}
+              className={`inline-flex items-center px-2 py-1 rounded-lg text-xs font-medium bg-white/80 ${theme.text} border border-current border-opacity-10`}
+            >
+              {benefit.length > 20 ? benefit.slice(0, 18) + "..." : benefit}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Hover Overlay with More Info */}
+      <div className="absolute inset-0 rounded-3xl bg-white/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-5">
+        <div className="text-center">
+          <p className={`text-sm ${theme.text} mb-3`}>
             {product.description}
           </p>
-
-          {/* Key Benefits */}
-          <div className="bg-white/70 rounded-xl p-5 backdrop-blur-sm">
-            <h4 className="text-sm font-semibold text-[hsl(142,30%,25%)] uppercase tracking-wide mb-4">
-              Key Benefits
-            </h4>
-            <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {product.benefits.map((benefit, i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-3 text-sm text-[hsl(142,15%,35%)]"
-                >
-                  <span className="flex-shrink-0 w-5 h-5 rounded-full bg-[hsl(142,45%,24%)]/10 flex items-center justify-center mt-0.5">
-                    <Check className="w-3 h-3 text-[hsl(142,45%,35%)]" />
-                  </span>
-                  <span className="leading-relaxed">{benefit}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="space-y-1">
+            {product.benefits.map((benefit, i) => (
+              <span 
+                key={i}
+                className={`inline-block px-2 py-1 rounded-full text-xs ${theme.badge} text-white mb-1`}
+              >
+                {benefit}
+              </span>
+            ))}
           </div>
         </div>
       </div>
