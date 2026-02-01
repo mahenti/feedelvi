@@ -1,5 +1,5 @@
 import { ProductCard, type Product } from "@/components/ProductCard";
-import { Beef, Sheep, Pig, Rabbit, Bird, Wheat } from "lucide-react";
+import { Beef, CircleDot, Circle, Rabbit, Bird, Wheat } from "lucide-react";
 
 const products: Product[] = [
   // BOVINE RANGE
@@ -132,7 +132,7 @@ export function ProductsSection() {
           <div>
             <div className="flex items-center gap-3 mb-8">
               <div className="w-12 h-12 rounded-xl bg-[hsl(35,30%,94%)] flex items-center justify-center">
-                <Sheep className="w-6 h-6 text-[hsl(35,50%,45%)]" />
+                <CircleDot className="w-6 h-6 text-[hsl(35,50%,45%)]" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-[hsl(142,30%,15%)]">Ovine–Caprine</h3>
@@ -148,7 +148,7 @@ export function ProductsSection() {
           <div>
             <div className="flex items-center gap-3 mb-8">
               <div className="w-12 h-12 rounded-xl bg-[hsl(25,30%,94%)] flex items-center justify-center">
-                <Pig className="w-6 h-6 text-[hsl(25,45%,45%)]" />
+                <Circle className="w-6 h-6 text-[hsl(25,45%,45%)]" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-[hsl(142,30%,15%)]">Porcine</h3>
