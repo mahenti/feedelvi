@@ -60,32 +60,7 @@ export function FinlandSection() {
               </div>
             </div>
             <div className="relative">
-              <svg viewBox="0 0 400 300" className="w-full">
-                <circle cx="200" cy="150" r="100" fill="#1e3a5f"/>
-                <ellipse cx="200" cy="150" rx="100" ry="35" fill="none" stroke="#3b82f6" strokeWidth="1" opacity="0.5"/>
-                <ellipse cx="200" cy="150" rx="100" ry="70" fill="none" stroke="#3b82f6" strokeWidth="1" opacity="0.5"/>
-                <line x1="100" y1="150" x2="300" y2="150" stroke="#3b82f6" strokeWidth="1" opacity="0.5"/>
-                <line x1="200" y1="50" x2="200" y2="250" stroke="#3b82f6" strokeWidth="1" opacity="0.5"/>
-                <path d="M160,120 Q180,100 200,120 T240,130" fill="#22c55e" opacity="0.7"/>
-                <path d="M140,170 Q170,160 190,180 T230,175" fill="#22c55e" opacity="0.7"/>
-                <path d="M180,100 Q200,90 210,120 T200,180" fill="#22c55e" opacity="0.7"/>
-                <circle cx="200" cy="150" r="6" fill="#ef4444"/>
-                <line x1="200" y1="144" x2="200" y2="40" stroke="#ef4444" strokeWidth="2"/>
-                <line x1="206" y1="150" x2="360" y2="150" stroke="#f59e0b" strokeWidth="2"/>
-                <line x1="270" y1="80" x2="350" y2="50" stroke="#8b5cf6" strokeWidth="2"/>
-                <line x1="130" y1="80" x2="50" y2="50" stroke="#06b6d4" strokeWidth="2"/>
-                <line x1="270" y1="220" x2="350" y2="250" stroke="#ec4899" strokeWidth="2"/>
-                <circle cx="200" cy="40" r="5" fill="#ef4444"/>
-                <circle cx="360" cy="150" r="5" fill="#f59e0b"/>
-                <circle cx="350" cy="50" r="5" fill="#8b5cf6"/>
-                <circle cx="50" cy="50" r="5" fill="#06b6d4"/>
-                <circle cx="350" cy="250" r="5" fill="#ec4899"/>
-                <text x="200" y="30" textAnchor="middle" fontSize="10" fill="white">Nordic</text>
-                <text x="370" y="154" textAnchor="start" fontSize="10" fill="white">Asia</text>
-                <text x="360" y="40" textAnchor="start" fontSize="10" fill="white">Europe</text>
-                <text x="40" y="40" textAnchor="end" fontSize="10" fill="white">Americas</text>
-                <text x="360" y="265" textAnchor="start" fontSize="10" fill="white">Africa</text>
-              </svg>
+              <img src="/globe (1).jpg" alt="Global export network" className="w-full rounded-2xl" />
             </div>
           </div>
         </div>
