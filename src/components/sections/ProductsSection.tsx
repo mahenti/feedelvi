@@ -27,6 +27,50 @@ const sectionBackgrounds: Record<string, string> = {
   poultry: "https://images.unsplash.com/photo-1548550023-2bdb3c5bdae5?w=1920&h=600&fit=crop",
 };
 
+const categoryThemes: Record<Product["category"], { 
+  bg: string;
+  border: string;
+  badge: string;
+  text: string;
+  accent: string;
+}> = {
+  bovine: {
+    bg: "bg-emerald-100",
+    border: "border-emerald-200",
+    badge: "bg-emerald-600",
+    text: "text-emerald-900",
+    accent: "text-emerald-600",
+  },
+  "ovine-caprine": {
+    bg: "bg-amber-100",
+    border: "border-amber-200",
+    badge: "bg-amber-600",
+    text: "text-amber-900",
+    accent: "text-amber-600",
+  },
+  porcine: {
+    bg: "bg-rose-100",
+    border: "border-rose-200",
+    badge: "bg-rose-600",
+    text: "text-rose-900",
+    accent: "text-rose-600",
+  },
+  lagomorph: {
+    bg: "bg-purple-100",
+    border: "border-purple-200",
+    badge: "bg-purple-600",
+    text: "text-purple-900",
+    accent: "text-purple-600",
+  },
+  poultry: {
+    bg: "bg-yellow-100",
+    border: "border-yellow-200",
+    badge: "bg-yellow-600",
+    text: "text-yellow-900",
+    accent: "text-yellow-600",
+  },
+};
+
 const sections = [
   { id: "bovine", title: "Cattle", subtitle: "Bovine Range", color: "#5B8C5A", textColor: "text-[#2D4A2D]", products: products.filter(p => p.category === "bovine") },
   { id: "ovine-caprine", title: "Sheep & Goats", subtitle: "Ovine–Caprine Range", color: "#B8956C", textColor: "text-[#5C4A2A]", products: products.filter(p => p.category === "ovine-caprine") },
@@ -54,38 +98,52 @@ export function ProductsSection() {
         </div>
       </div>
 
-      {/* Animal Sections - Full Width with Blurred Backgrounds */}
-      <div className="space-y-0">
+      {/* Animal Sections - Full Width with Backgrounds */}
+      <div className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pb-16">
         {sections.map((section) => (
-          <div key={section.id} className="relative min-h-[500px] lg:min-h-[600px] flex items-center">
-            {/* Blurred Background Image */}
+          <div 
+            key={section.id} 
+            className="relative rounded-3xl overflow-hidden shadow-2xl transform transition-transform hover:scale-[1.01]"
+            style={{ 
+              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1)',
+            }}
+          >
+            {/* Background Image - No Blur */}
             <div 
               className="absolute inset-0 bg-cover bg-center"
               style={{ 
                 backgroundImage: `url(${sectionBackgrounds[section.id]})`,
               }}
             >
-              {/* Dark Overlay with Blur */}
-              <div className="absolute inset-0 backdrop-blur-md bg-black/40" />
+              {/* Dark Overlay Only - No Blur */}
+              <div className="absolute inset-0 bg-black/50" />
             </div>
 
             {/* Content */}
-            <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-              {/* Section Header - White text on dark background */}
-              <div className="text-center mb-12">
-                <h3 className="text-3xl lg:text-4xl font-bold text-white mb-2">{section.title}</h3>
-                <p className="text-white/70 uppercase tracking-wider text-sm">{section.subtitle}</p>
+            <div className="relative z-10 px-8 py-12 lg:px-12 lg:py-16">
+              {/* Section Header - BOLD, FAT, UPPERCASE */}
+              <div className="text-center mb-10">
+                <h3 
+                  className="text-4xl lg:text-5xl xl:text-6xl font-black uppercase tracking-wider text-white mb-3"
+                  style={{ 
+                    textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
+                    letterSpacing: '0.1em',
+                  }}
+                >
+                  {section.title}
+                </h3>
+                <p className="text-white/80 uppercase tracking-[0.2em] text-sm font-semibold">{section.subtitle}</p>
                 <div 
-                  className="w-20 h-1 rounded-full mt-4 mx-auto"
+                  className="w-32 h-1.5 rounded-full mt-5 mx-auto"
                   style={{ backgroundColor: section.color }}
                 />
               </div>
 
-              {/* Products - Horizontal Scroll on Mobile, Grid on Desktop */}
+              {/* Products */}
               <div className="flex justify-center">
-                <div className="flex flex-wrap justify-center gap-6 max-w-7xl">
+                <div className="flex flex-wrap justify-center gap-5">
                   {section.products.map((product, index) => (
-                    <div key={product.id} className="w-full sm:w-[320px] lg:w-[280px]">
+                    <div key={product.id} className="w-full sm:w-[300px] lg:w-[260px]">
                       <ProductCard product={product} index={index} />
                     </div>
                   ))}
