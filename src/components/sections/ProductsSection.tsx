@@ -27,50 +27,6 @@ const sectionBackgrounds: Record<string, string> = {
   poultry: "https://images.unsplash.com/photo-1548550023-2bdb3c5bdae5?w=1920&h=600&fit=crop",
 };
 
-const categoryThemes: Record<Product["category"], { 
-  bg: string;
-  border: string;
-  badge: string;
-  text: string;
-  accent: string;
-}> = {
-  bovine: {
-    bg: "bg-emerald-100",
-    border: "border-emerald-200",
-    badge: "bg-emerald-600",
-    text: "text-emerald-900",
-    accent: "text-emerald-600",
-  },
-  "ovine-caprine": {
-    bg: "bg-amber-100",
-    border: "border-amber-200",
-    badge: "bg-amber-600",
-    text: "text-amber-900",
-    accent: "text-amber-600",
-  },
-  porcine: {
-    bg: "bg-rose-100",
-    border: "border-rose-200",
-    badge: "bg-rose-600",
-    text: "text-rose-900",
-    accent: "text-rose-600",
-  },
-  lagomorph: {
-    bg: "bg-purple-100",
-    border: "border-purple-200",
-    badge: "bg-purple-600",
-    text: "text-purple-900",
-    accent: "text-purple-600",
-  },
-  poultry: {
-    bg: "bg-yellow-100",
-    border: "border-yellow-200",
-    badge: "bg-yellow-600",
-    text: "text-yellow-900",
-    accent: "text-yellow-600",
-  },
-};
-
 const sections = [
   { id: "bovine", title: "Cattle", subtitle: "Bovine Range", color: "#5B8C5A", textColor: "text-[#2D4A2D]", products: products.filter(p => p.category === "bovine") },
   { id: "ovine-caprine", title: "Sheep & Goats", subtitle: "Ovine–Caprine Range", color: "#B8956C", textColor: "text-[#5C4A2A]", products: products.filter(p => p.category === "ovine-caprine") },
