@@ -1,6 +1,6 @@
 export function Header() {
   return (
-    <header className="w-full bg-emerald-600">
+    <header className="w-full" style={{ backgroundColor: '#205a40' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
