@@ -51,26 +51,6 @@ export function FinlandSection() {
           </div>
         </div>
 
-        {/* Export Network */}
-        <div className="bg-slate-900 rounded-3xl p-8 md:p-12">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-3xl font-black text-white mb-4">Export Network</h3>
-              <p className="text-slate-300 mb-6">From Helsinki to farms worldwide. Direct shipping to Europe, Asia, Americas, Africa, and the Nordic region.</p>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3"><div className="w-3 h-3 rounded-full bg-red-500"></div><span className="text-white">Nordic Region</span></div>
-                <div className="flex items-center gap-3"><div className="w-3 h-3 rounded-full bg-amber-500"></div><span className="text-white">Asia Pacific</span></div>
-                <div className="flex items-center gap-3"><div className="w-3 h-3 rounded-full bg-purple-500"></div><span className="text-white">Europe</span></div>
-                <div className="flex items-center gap-3"><div className="w-3 h-3 rounded-full bg-cyan-500"></div><span className="text-white">Americas</span></div>
-                <div className="flex items-center gap-3"><div className="w-3 h-3 rounded-full bg-pink-500"></div><span className="text-white">Africa</span></div>
-              </div>
-            </div>
-            <div className="relative">
-              <img src="/globe (1).jpg" alt="Global export network" className="w-full rounded-2xl" />
-            </div>
-          </div>
-        </div>
-
         {/* Trust Statement */}
         <div className="mt-12 text-center">
           <p className="text-2xl font-medium text-slate-900">From Finnish fields to global farms — <span className="text-emerald-600 font-bold">nutrition that performs.</span></p>
