@@ -23,8 +23,8 @@ const sectionBackgrounds: Record<string, string> = {
   bovine: "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=1920&h=600&fit=crop",
   "ovine-caprine": "https://images.unsplash.com/photo-1484557985045-edf25e08da73?w=1920&h=600&fit=crop",
   porcine: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=1920&h=600&fit=crop",
-  lagomorph: "https://images.unsplash.com/photo-1585110396067-4f4f1c13fcf3?w=1920&h=600&fit=crop",
-  poultry: "https://images.unsplash.com/photo-1548550023-2bdb3c5bdae5?w=1920&h=600&fit=crop",
+  lagomorph: "https://images.unsplash.com/photo-1518796745738-41046602fed0?w=1920&h=600&fit=crop",
+  poultry: "https://images.unsplash.com/photo-1563109408-2b493e377845?w=1920&h=600&fit=crop",
 };
 
 const sections = [

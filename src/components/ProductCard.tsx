@@ -93,65 +93,84 @@ export function ProductCard({ product, index }: ProductCardProps) {
   const animalFace = getAnimalFace(product, index);
 
   return (
-    <div className={`group relative rounded-2xl border-2 ${theme.border} ${theme.bg} overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02]`}>
-      {/* Solid Card Content */}
-      <div className="p-5">
-        {/* Top Row - Animal Face & Form Badge */}
-        <div className="flex items-start justify-between mb-4">
-          {/* Animal Face */}
-          <div className="w-14 h-14 rounded-full bg-white shadow-md p-0.5 border-2 border-gray-100">
+    <div className={`group relative ${theme.bg} rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2`}>
+      {/* Premium Card Content */}
+      <div className="p-0">
+        {/* Product Image Area - Large */}
+        <div className="relative h-48 bg-gradient-to-b from-gray-100 to-gray-200 overflow-hidden">
+          {/* Product Placeholder */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <div className="w-20 h-20 rounded-full bg-white/80 shadow-lg flex items-center justify-center mb-2">
+              <span className="text-4xl">📦</span>
+            </div>
+            <span className="text-xs text-gray-500 font-medium uppercase tracking-wider">Product Image</span>
+          </div>
+          
+          {/* Animal Face Badge - Top Right */}
+          <div className="absolute top-4 right-4 w-12 h-12 rounded-full bg-white shadow-lg p-0.5 border-2 border-white/50">
             <div className="w-full h-full rounded-full overflow-hidden">
               {animalFace}
             </div>
           </div>
           
-          {/* Form Badge */}
-          <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gray-800 text-white shadow-sm`}>
-            {product.form}
-          </span>
+          {/* Form Badge - Top Left */}
+          <div className="absolute top-4 left-4">
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold bg-gray-900/90 text-white backdrop-blur-sm shadow-lg uppercase tracking-wider">
+              {product.form}
+            </span>
+          </div>
         </div>
 
-        {/* Title */}
-        <h3 className={`text-base font-bold ${theme.text} mb-2 leading-tight`}>
-          {product.name}
-        </h3>
+        {/* Content Area */}
+        <div className="p-5">
+          {/* Title */}
+          <h3 className={`text-lg font-bold ${theme.text} mb-2 leading-tight`}>
+            {product.name}
+          </h3>
 
-        {/* Description */}
-        <p className={`text-sm ${theme.text} opacity-70 mb-3 line-clamp-2`}>
-          {product.description}
-        </p>
+          {/* Description */}
+          <p className={`text-sm ${theme.text} opacity-70 mb-4 line-clamp-2`}>
+            {product.description}
+          </p>
 
-        {/* Benefits as Pills */}
-        <div className="flex flex-wrap gap-1.5">
-          {product.benefits.slice(0, 3).map((benefit, i) => (
-            <span 
-              key={i}
-              className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium bg-white ${theme.accent} border border-current border-opacity-20`}
-            >
-              {benefit.length > 25 ? benefit.slice(0, 22) + "..." : benefit}
-            </span>
-          ))}
+          {/* Benefits */}
+          <div className="flex flex-wrap gap-2">
+            {product.benefits.slice(0, 2).map((benefit, i) => (
+              <span 
+                key={i}
+                className={`inline-flex items-center px-3 py-1 rounded-full text-[10px] font-semibold bg-white/60 ${theme.accent} shadow-sm`}
+              >
+                {benefit.length > 30 ? benefit.slice(0, 27) + "..." : benefit}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Hover Overlay with Full Info */}
-      <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center p-5 shadow-inner">
-        <div className="w-14 h-14 rounded-full overflow-hidden mb-3 shadow-md">
-          {animalFace}
+      {/* Hover Overlay */}
+      <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col p-0 shadow-2xl">
+        {/* Product Image in Hover */}
+        <div className="h-32 bg-gray-100 flex items-center justify-center">
+          <div className="w-16 h-16 rounded-full bg-white shadow-lg flex items-center justify-center">
+            <span className="text-3xl">📦</span>
+          </div>
         </div>
-        <h4 className={`font-bold ${theme.text} mb-2 text-center text-sm`}>{product.name}</h4>
-        <p className={`text-xs ${theme.text} opacity-80 mb-3 text-center`}>
-          {product.description}
-        </p>
-        <div className="flex flex-wrap justify-center gap-1">
-          {product.benefits.map((benefit, i) => (
-            <span 
-              key={i}
-              className={`inline-block px-2 py-0.5 rounded-full text-[9px] font-medium ${theme.badge} text-white`}
-            >
-              {benefit}
-            </span>
-          ))}
+        
+        <div className="p-5 flex-1 flex flex-col">
+          <h4 className={`font-bold ${theme.text} mb-2 text-base`}>{product.name}</h4>
+          <p className={`text-xs ${theme.text} opacity-80 mb-3 flex-1`}>
+            {product.description}
+          </p>
+          <div className="flex flex-wrap gap-1.5">
+            {product.benefits.map((benefit, i) => (
+              <span 
+                key={i}
+                className={`inline-block px-2.5 py-1 rounded-full text-[9px] font-semibold ${theme.badge} text-white shadow-md`}
+              >
+                {benefit}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </div>
