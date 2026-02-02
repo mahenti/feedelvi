@@ -4,12 +4,8 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-1">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center -ml-12 lg:-ml-16">
-            <img 
-              src="/logotransp.png" 
-              alt="FeedElvi Logo" 
-              className="h-32 w-auto object-contain"
-            />
+          <a href="/" className="text-white text-2xl font-bold">
+            FeedElvi
           </a>
 
           {/* Navigation */}
