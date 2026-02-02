@@ -64,12 +64,11 @@ export function ProductsSection() {
               boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1)',
             }}
           >
-            {/* Background Image - Full Width No Zoom */}
+            {/* Background Image - Cover (maintains aspect ratio) */}
             <div 
-              className="absolute inset-0 bg-center bg-no-repeat"
+              className="absolute inset-0 bg-cover bg-center"
               style={{ 
                 backgroundImage: `url(${sectionBackgrounds[section.id]})`,
-                backgroundSize: '100% 100%',
               }}
             >
               {/* Dark Overlay Only - No Blur */}
