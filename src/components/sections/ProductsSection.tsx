@@ -1,5 +1,5 @@
 import { ProductCard, type Product } from "@/components/ProductCard";
-import { Wheat } from "lucide-react";
+import { Wheat, Beef, CircleDot, Circle, Rabbit, Bird } from "lucide-react";
 
 const products: Product[] = [
   // BOVINE RANGE
@@ -17,6 +17,14 @@ const products: Product[] = [
   { id: 8, name: "Broiler Finisher Formula", description: "Performance-focused feed formulated to maximize final weight gain and meat quality.", benefits: ["Supports muscle development", "Optimizes finishing weight", "Enhances carcass quality"], category: "poultry", form: "Pellets", animalType: "chicken" },
   { id: 9, name: "Layer Egg-Strength Nutrition", description: "Specialized nutrition supporting consistent egg production and strong shell quality.", benefits: ["Enhanced calcium absorption", "Sustained laying performance", "Improves shell strength"], category: "poultry", form: "Pellets", animalType: "chicken" },
   { id: 10, name: "Waterfowl Growth Nutrition", description: "Balanced feed developed specifically for ducks and geese to support healthy growth and vitality.", benefits: ["Supports strong skeletal growth", "Adapted for waterfowl digestion", "Consistent daily nutrition"], category: "poultry", form: "Pellets", animalType: "duck" },
+];
+
+const sections = [
+  { id: "bovine", title: "Cattle", subtitle: "Bovine Range", icon: Beef, color: "#5B8C5A", products: products.filter(p => p.category === "bovine") },
+  { id: "sheep", title: "Sheep & Goats", subtitle: "Ovine–Caprine Range", icon: CircleDot, color: "#B8956C", products: products.filter(p => p.category === "ovine-caprine") },
+  { id: "pig", title: "Pigs", subtitle: "Porcine Range", icon: Circle, color: "#C98B8B", products: products.filter(p => p.category === "porcine") },
+  { id: "rabbit", title: "Rabbits", subtitle: "Lagomorph Range", icon: Rabbit, color: "#9B7CB6", products: products.filter(p => p.category === "lagomorph") },
+  { id: "poultry", title: "Poultry", subtitle: "Poultry Range", icon: Bird, color: "#D4A84B", products: products.filter(p => p.category === "poultry") },
 ];
 
 export function ProductsSection() {
@@ -37,15 +45,43 @@ export function ProductsSection() {
           </p>
         </div>
 
-        {/* Products Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 gap-y-12">
-          {products.map((product, index) => (
-            <ProductCard key={product.id} product={product} index={index} />
-          ))}
+        {/* Individual Animal Sections */}
+        <div className="space-y-24">
+          {sections.map((section) => {
+            const Icon = section.icon;
+            return (
+              <div key={section.id} className="relative">
+                {/* Section Header */}
+                <div className="flex flex-col items-center mb-12">
+                  <div 
+                    className="w-20 h-20 rounded-2xl flex items-center justify-center mb-4 shadow-lg"
+                    style={{ backgroundColor: section.color }}
+                  >
+                    <Icon className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="text-2xl lg:text-3xl font-bold text-[#2D3A2D] mb-1">{section.title}</h3>
+                  <p className="text-sm text-[#8A9A8A] uppercase tracking-wider">{section.subtitle}</p>
+                  <div 
+                    className="w-24 h-1 rounded-full mt-4"
+                    style={{ backgroundColor: section.color }}
+                  />
+                </div>
+
+                {/* Products Grid - Centered */}
+                <div className="flex justify-center">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-6xl">
+                    {section.products.map((product, index) => (
+                      <ProductCard key={product.id} product={product} index={index} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         {/* Bottom Note */}
-        <div className="mt-16 text-center">
+        <div className="mt-24 text-center">
           <p className="text-sm text-[#8A9A8A]">
             All products formulated with premium ingredients for optimal animal health
           </p>
