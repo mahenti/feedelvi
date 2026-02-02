@@ -1,5 +1,5 @@
 import { ProductCard, type Product } from "@/components/ProductCard";
-import { Wheat, Beef, CircleDot, Circle, Rabbit, Bird } from "lucide-react";
+import { Wheat } from "lucide-react";
 
 const products: Product[] = [
   // BOVINE RANGE
@@ -19,20 +19,28 @@ const products: Product[] = [
   { id: 10, name: "Waterfowl Growth Nutrition", description: "Balanced feed developed specifically for ducks and geese to support healthy growth and vitality.", benefits: ["Supports strong skeletal growth", "Adapted for waterfowl digestion", "Consistent daily nutrition"], category: "poultry", form: "Pellets", animalType: "duck" },
 ];
 
+const sectionBackgrounds: Record<string, string> = {
+  bovine: "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=1920&h=600&fit=crop",
+  "ovine-caprine": "https://images.unsplash.com/photo-1484557985045-edf25e08da73?w=1920&h=600&fit=crop",
+  porcine: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=1920&h=600&fit=crop",
+  lagomorph: "https://images.unsplash.com/photo-1585110396067-4f4f1c13fcf3?w=1920&h=600&fit=crop",
+  poultry: "https://images.unsplash.com/photo-1548550023-2bdb3c5bdae5?w=1920&h=600&fit=crop",
+};
+
 const sections = [
-  { id: "bovine", title: "Cattle", subtitle: "Bovine Range", icon: Beef, color: "#5B8C5A", products: products.filter(p => p.category === "bovine") },
-  { id: "sheep", title: "Sheep & Goats", subtitle: "Ovine–Caprine Range", icon: CircleDot, color: "#B8956C", products: products.filter(p => p.category === "ovine-caprine") },
-  { id: "pig", title: "Pigs", subtitle: "Porcine Range", icon: Circle, color: "#C98B8B", products: products.filter(p => p.category === "porcine") },
-  { id: "rabbit", title: "Rabbits", subtitle: "Lagomorph Range", icon: Rabbit, color: "#9B7CB6", products: products.filter(p => p.category === "lagomorph") },
-  { id: "poultry", title: "Poultry", subtitle: "Poultry Range", icon: Bird, color: "#D4A84B", products: products.filter(p => p.category === "poultry") },
+  { id: "bovine", title: "Cattle", subtitle: "Bovine Range", color: "#5B8C5A", textColor: "text-[#2D4A2D]", products: products.filter(p => p.category === "bovine") },
+  { id: "ovine-caprine", title: "Sheep & Goats", subtitle: "Ovine–Caprine Range", color: "#B8956C", textColor: "text-[#5C4A2A]", products: products.filter(p => p.category === "ovine-caprine") },
+  { id: "porcine", title: "Pigs", subtitle: "Porcine Range", color: "#C98B8B", textColor: "text-[#5C2A2A]", products: products.filter(p => p.category === "porcine") },
+  { id: "lagomorph", title: "Rabbits", subtitle: "Lagomorph Range", color: "#9B7CB6", textColor: "text-[#3D2A4A]", products: products.filter(p => p.category === "lagomorph") },
+  { id: "poultry", title: "Poultry", subtitle: "Poultry Range", color: "#D4A84B", textColor: "text-[#5C4A1A]", products: products.filter(p => p.category === "poultry") },
 ];
 
 export function ProductsSection() {
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-[#FAFBF8] to-[#F0F4F0]">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-20">
+    <section className="bg-[#FAFBF8]">
+      {/* Main Header */}
+      <div className="py-16 lg:py-20 text-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#5B8C5A]/10 text-[#5B8C5A] text-sm font-medium mb-6">
             <Wheat className="w-4 h-4" />
             <span>Our Feed Collection</span>
@@ -40,52 +48,59 @@ export function ProductsSection() {
           <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-[#2D3A2D] mb-6">
             Nutrition by Animal
           </h2>
-          <p className="text-lg text-[#5A6B5A] leading-relaxed">
-            Specialized formulas crafted for each species. Hover over any card to learn more.
+          <p className="text-lg text-[#5A6B5A] leading-relaxed max-w-2xl mx-auto">
+            Specialized formulas crafted for each species. Scroll to explore our complete range.
           </p>
         </div>
+      </div>
 
-        {/* Individual Animal Sections */}
-        <div className="space-y-24">
-          {sections.map((section) => {
-            const Icon = section.icon;
-            return (
-              <div key={section.id} className="relative">
-                {/* Section Header */}
-                <div className="flex flex-col items-center mb-12">
-                  <div 
-                    className="w-20 h-20 rounded-2xl flex items-center justify-center mb-4 shadow-lg"
-                    style={{ backgroundColor: section.color }}
-                  >
-                    <Icon className="w-10 h-10 text-white" />
-                  </div>
-                  <h3 className="text-2xl lg:text-3xl font-bold text-[#2D3A2D] mb-1">{section.title}</h3>
-                  <p className="text-sm text-[#8A9A8A] uppercase tracking-wider">{section.subtitle}</p>
-                  <div 
-                    className="w-24 h-1 rounded-full mt-4"
-                    style={{ backgroundColor: section.color }}
-                  />
-                </div>
+      {/* Animal Sections - Full Width with Blurred Backgrounds */}
+      <div className="space-y-0">
+        {sections.map((section) => (
+          <div key={section.id} className="relative min-h-[500px] lg:min-h-[600px] flex items-center">
+            {/* Blurred Background Image */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ 
+                backgroundImage: `url(${sectionBackgrounds[section.id]})`,
+              }}
+            >
+              {/* Dark Overlay with Blur */}
+              <div className="absolute inset-0 backdrop-blur-md bg-black/40" />
+            </div>
 
-                {/* Products Grid - Centered */}
-                <div className="flex justify-center">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-6xl">
-                    {section.products.map((product, index) => (
-                      <ProductCard key={product.id} product={product} index={index} />
-                    ))}
-                  </div>
+            {/* Content */}
+            <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+              {/* Section Header - White text on dark background */}
+              <div className="text-center mb-12">
+                <h3 className="text-3xl lg:text-4xl font-bold text-white mb-2">{section.title}</h3>
+                <p className="text-white/70 uppercase tracking-wider text-sm">{section.subtitle}</p>
+                <div 
+                  className="w-20 h-1 rounded-full mt-4 mx-auto"
+                  style={{ backgroundColor: section.color }}
+                />
+              </div>
+
+              {/* Products - Horizontal Scroll on Mobile, Grid on Desktop */}
+              <div className="flex justify-center">
+                <div className="flex flex-wrap justify-center gap-6 max-w-7xl">
+                  {section.products.map((product, index) => (
+                    <div key={product.id} className="w-full sm:w-[320px] lg:w-[280px]">
+                      <ProductCard product={product} index={index} />
+                    </div>
+                  ))}
                 </div>
               </div>
-            );
-          })}
-        </div>
+            </div>
+          </div>
+        ))}
+      </div>
 
-        {/* Bottom Note */}
-        <div className="mt-24 text-center">
-          <p className="text-sm text-[#8A9A8A]">
-            All products formulated with premium ingredients for optimal animal health
-          </p>
-        </div>
+      {/* Bottom Note */}
+      <div className="py-16 text-center bg-[#F0F4F0]">
+        <p className="text-sm text-[#8A9A8A]">
+          All products formulated with premium ingredients for optimal animal health
+        </p>
       </div>
     </section>
   );
