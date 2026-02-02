@@ -5,7 +5,11 @@ export function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <span className="text-white text-xl font-bold">FeedElvi</span>
+            <img 
+              src="/logotransp.png" 
+              alt="FeedElvi Logo" 
+              className="h-14 w-auto object-contain"
+            />
           </div>
 
           {/* Navigation */}
