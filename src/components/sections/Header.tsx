@@ -6,9 +6,9 @@ export function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <img 
-              src="/Logo.JPG" 
+              src="/logotran.png" 
               alt="FeedElvi Logo" 
-              className="h-14 w-auto object-contain rounded-lg"
+              className="h-14 w-auto object-contain"
             />
           </div>
 
