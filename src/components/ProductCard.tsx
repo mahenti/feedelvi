@@ -163,9 +163,9 @@ export function ProductCard({ product, index }: ProductCardProps) {
       </div>
 
       {/* Hover Overlay - Product Specs */}
-      <div className="absolute inset-0 bg-white/95 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col p-0 shadow-2xl">
+      <div className="absolute inset-0 bg-white/95 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col p-0 shadow-2xl rounded-3xl overflow-hidden">
         {/* Specs Header */}
-        <div className={`h-14 ${theme.badge} flex items-center justify-center shrink-0`}>
+        <div className={`h-10 ${theme.badge} flex items-center justify-center shrink-0`}>
           <span className="text-white font-bold text-sm uppercase tracking-wider">Product Specifications</span>
         </div>
         
@@ -209,11 +209,13 @@ export function ProductCard({ product, index }: ProductCardProps) {
             </div>
           )}
           
-          {/* Quality Badge */}
+          {/* Quality Badge - Achievement Style */}
           <div className="mt-3 pt-2 border-t border-gray-200 shrink-0">
-            <div className="flex items-center justify-center gap-1.5">
-              <span className="text-base">🇫🇮</span>
-              <span className="text-[10px] font-semibold text-gray-600 uppercase tracking-wide">Finnish Quality</span>
+            <div className="flex items-center justify-center">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg">
+                <span className="text-sm">🇫🇮</span>
+                <span className="text-[10px] font-bold uppercase tracking-wide">Finnish Quality</span>
+              </div>
             </div>
           </div>
         </div>
