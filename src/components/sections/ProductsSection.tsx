@@ -20,11 +20,11 @@ const products: Product[] = [
 ];
 
 const sectionBackgrounds: Record<string, string> = {
-  bovine: "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=1920&h=600&fit=crop",
+  bovine: "/cowsection.jpg",
   "ovine-caprine": "https://images.unsplash.com/photo-1484557985045-edf25e08da73?w=1920&h=600&fit=crop",
   porcine: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=1920&h=600&fit=crop",
-  lagomorph: "https://images.unsplash.com/photo-1518796745738-41046602fed0?w=1920&h=600&fit=crop",
-  poultry: "https://images.unsplash.com/photo-1563109408-2b493e377845?w=1920&h=600&fit=crop",
+  lagomorph: "/rabbitsection.JPG",
+  poultry: "/chickensection.JPG",
 };
 
 const sections = [
@@ -64,11 +64,12 @@ export function ProductsSection() {
               boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1)',
             }}
           >
-            {/* Background Image - No Blur */}
+            {/* Background Image - Full Width No Zoom */}
             <div 
-              className="absolute inset-0 bg-cover bg-center"
+              className="absolute inset-0 bg-center bg-no-repeat"
               style={{ 
                 backgroundImage: `url(${sectionBackgrounds[section.id]})`,
+                backgroundSize: '100% 100%',
               }}
             >
               {/* Dark Overlay Only - No Blur */}
