@@ -9,6 +9,13 @@ export interface Product {
   form: "Pelleted Feed" | "Pellets" | "Crumble";
   animalType?: "cow" | "sheep" | "pig" | "rabbit" | "chicken" | "duck";
   productImage?: string;
+  specs?: {
+    pelletSize?: string;
+    protein?: string;
+    energy?: string;
+    fiber?: string;
+    origin?: string;
+  };
 }
 
 interface ProductCardProps {
@@ -155,29 +162,59 @@ export function ProductCard({ product, index }: ProductCardProps) {
         </div>
       </div>
 
-      {/* Hover Overlay */}
-      <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col p-0 shadow-2xl">
-        {/* Product Image in Hover */}
-        <div className="h-32 bg-gray-100 flex items-center justify-center">
-          <div className="w-16 h-16 rounded-full bg-white shadow-lg flex items-center justify-center">
-            <span className="text-3xl">📦</span>
-          </div>
+      {/* Hover Overlay - Product Specs */}
+      <div className="absolute inset-0 bg-white/95 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col p-0 shadow-2xl">
+        {/* Specs Header */}
+        <div className={`h-12 ${theme.badge} flex items-center justify-center`}>
+          <span className="text-white font-bold text-sm uppercase tracking-wider">Product Specifications</span>
         </div>
         
         <div className="p-5 flex-1 flex flex-col">
-          <h4 className={`font-bold ${theme.text} mb-2 text-base`}>{product.name}</h4>
-          <p className={`text-xs ${theme.text} opacity-80 mb-3 flex-1`}>
-            {product.description}
-          </p>
-          <div className="flex flex-wrap gap-1.5">
-            {product.benefits.map((benefit, i) => (
-              <span 
-                key={i}
-                className={`inline-block px-2.5 py-1 rounded-full text-[9px] font-semibold ${theme.badge} text-white shadow-md`}
-              >
-                {benefit}
-              </span>
-            ))}
+          {/* Product Name */}
+          <h4 className={`font-bold ${theme.text} mb-4 text-base text-center`}>{product.name}</h4>
+          
+          {/* Specs Grid */}
+          {product.specs && (
+            <div className="space-y-3 flex-1">
+              {product.specs.pelletSize && (
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="text-xs text-gray-500 font-medium uppercase">Pellet Size</span>
+                  <span className="text-sm font-semibold text-gray-800">{product.specs.pelletSize}</span>
+                </div>
+              )}
+              {product.specs.protein && (
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="text-xs text-gray-500 font-medium uppercase">Protein</span>
+                  <span className="text-sm font-semibold text-gray-800">{product.specs.protein}</span>
+                </div>
+              )}
+              {product.specs.energy && (
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="text-xs text-gray-500 font-medium uppercase">Energy</span>
+                  <span className="text-sm font-semibold text-gray-800">{product.specs.energy}</span>
+                </div>
+              )}
+              {product.specs.fiber && (
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="text-xs text-gray-500 font-medium uppercase">Fiber</span>
+                  <span className="text-sm font-semibold text-gray-800">{product.specs.fiber}</span>
+                </div>
+              )}
+              {product.specs.origin && (
+                <div className="flex justify-between items-center py-2">
+                  <span className="text-xs text-gray-500 font-medium uppercase">Origin</span>
+                  <span className="text-sm font-semibold text-gray-800">{product.specs.origin}</span>
+                </div>
+              )}
+            </div>
+          )}
+          
+          {/* Quality Badge */}
+          <div className="mt-4 pt-3 border-t border-gray-200">
+            <div className="flex items-center justify-center gap-2">
+              <span className="text-lg">🇫🇮</span>
+              <span className="text-xs font-semibold text-gray-600 uppercase tracking-wider">Premium Finnish Quality</span>
+            </div>
           </div>
         </div>
       </div>
