@@ -1,16 +1,16 @@
 export function Header() {
   return (
     <header className="w-full" style={{ backgroundColor: '#205a40' }}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-1">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center">
+          <a href="/" className="flex items-center">
             <img 
               src="/logotransp.png" 
               alt="FeedElvi Logo" 
-              className="h-24 w-auto object-contain"
+              className="h-32 w-auto object-contain"
             />
-          </div>
+          </a>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center gap-8">
