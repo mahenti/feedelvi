@@ -149,13 +149,13 @@ export function ProductCard({ product, index }: ProductCardProps) {
           </p>
 
           {/* Benefits */}
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1.5">
             {product.benefits.slice(0, 2).map((benefit, i) => (
               <span 
                 key={i}
-                className={`inline-flex items-center px-3 py-1 rounded-full text-[10px] font-semibold bg-white/60 ${theme.accent} shadow-sm`}
+                className={`inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-bold ${theme.badge} text-white shadow-sm uppercase tracking-wide`}
               >
-                {benefit.length > 30 ? benefit.slice(0, 27) + "..." : benefit}
+                {benefit.length > 20 ? benefit.slice(0, 18) + ".." : benefit}
               </span>
             ))}
           </div>
