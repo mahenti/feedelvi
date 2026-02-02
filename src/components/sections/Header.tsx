@@ -8,7 +8,7 @@ export function Header() {
             <img 
               src="/logotransp.png" 
               alt="FeedElvi Logo" 
-              className="h-14 w-auto object-contain"
+              className="h-24 w-auto object-contain"
             />
           </div>
 
