@@ -98,13 +98,21 @@ export function ProductCard({ product, index }: ProductCardProps) {
       <div className="p-0">
         {/* Product Image Area - Large */}
         <div className="relative h-48 bg-gradient-to-b from-gray-100 to-gray-200 overflow-hidden">
-          {/* Product Placeholder */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <div className="w-20 h-20 rounded-full bg-white/80 shadow-lg flex items-center justify-center mb-2">
-              <span className="text-4xl">📦</span>
+          {/* Product Image or Placeholder */}
+          {product.productImage ? (
+            <img 
+              src={product.productImage} 
+              alt={product.name}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="absolute inset-0 flex flex-col items-center justify-center">
+              <div className="w-20 h-20 rounded-full bg-white/80 shadow-lg flex items-center justify-center mb-2">
+                <span className="text-4xl">📦</span>
+              </div>
+              <span className="text-xs text-gray-500 font-medium uppercase tracking-wider">Product Image</span>
             </div>
-            <span className="text-xs text-gray-500 font-medium uppercase tracking-wider">Product Image</span>
-          </div>
+          )}
           
           {/* Animal Face Badge - Top Right */}
           <div className="absolute top-4 right-4 w-12 h-12 rounded-full bg-white shadow-lg p-0.5 border-2 border-white/50">
