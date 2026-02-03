@@ -15,6 +15,15 @@ export function FinlandSection() {
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">From our mills in Finland to farms across 5 continents — delivering consistent, high-performance nutrition for cattle, poultry, swine, and more.</p>
         </div>
 
+        {/* picfi Image */}
+        <div className="flex justify-center mb-12">
+          <img 
+            src="/picfi.png" 
+            alt="Finland" 
+            className="max-h-80 w-auto object-contain rounded-3xl shadow-2xl"
+          />
+        </div>
+
         {/* Stats & Certification */}
         <div className="flex flex-col items-center gap-4 mb-16">
           {/* Stats */}
@@ -32,7 +41,7 @@ export function FinlandSection() {
           
           {/* Elvi Certified */}
           <div className="flex items-center gap-3">
-            <span className="text-slate-500 font-medium text-sm uppercase tracking-wide">Certified by:</span>
+            <span className="text-slate-500 font-black text-sm uppercase tracking-wide">Certified by:</span>
             <a 
               href="https://elvimerkki.fi" 
               target="_blank" 
