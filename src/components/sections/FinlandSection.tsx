@@ -1,6 +1,11 @@
 export function FinlandSection() {
   return (
-    <section className="relative py-24">
+    <section className="relative py-24" style={{ fontFamily: "'Onest', sans-serif" }}>
+      {/* Google Font */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet" />
+      
       {/* Background image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15"
@@ -13,15 +18,6 @@ export function FinlandSection() {
           <span className="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-800 text-sm font-bold rounded-full mb-4 shadow-md">🇫🇮 FINNISH ANIMAL NUTRITION</span>
           <h2 className="text-5xl lg:text-6xl font-black text-slate-900 leading-tight mb-4" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>Premium Feed.<span className="text-emerald-600">Global Reach.</span></h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">From our mills in Finland to farms across 5 continents — delivering consistent, high-performance nutrition for cattle, poultry, swine, and more.</p>
-        </div>
-
-        {/* Animal Categories Image */}
-        <div className="flex justify-center mb-12">
-          <img 
-            src="/2nd.png" 
-            alt="Animal Categories" 
-            className="max-h-64 w-auto object-contain rounded-3xl shadow-2xl"
-          />
         </div>
 
         {/* Stats & Certification Row */}
