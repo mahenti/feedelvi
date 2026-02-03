@@ -16,7 +16,7 @@ export function FinlandSection() {
         </div>
 
         {/* Stats & Certification */}
-        <div className="flex flex-col items-center gap-6 mb-16">
+        <div className="flex flex-col items-center gap-4 mb-16">
           {/* Stats */}
           <div className="flex items-center gap-12">
             <div className="text-center">
@@ -31,7 +31,7 @@ export function FinlandSection() {
           </div>
           
           {/* Elvi Certified */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <span className="text-slate-500 font-medium text-sm uppercase tracking-wide">Certified by:</span>
             <a 
               href="https://elvimerkki.fi" 
@@ -42,7 +42,7 @@ export function FinlandSection() {
               <img 
                 src="/certview.png" 
                 alt="Elvi Certified" 
-                className="h-28 w-auto object-contain"
+                className="h-24 w-auto object-contain"
               />
             </a>
           </div>
