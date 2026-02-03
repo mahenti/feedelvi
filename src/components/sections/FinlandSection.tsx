@@ -20,7 +20,7 @@ export function FinlandSection() {
           <img 
             src="/picfi.png" 
             alt="Finland" 
-            className="max-h-80 w-auto object-contain rounded-3xl shadow-2xl"
+            className="w-full max-w-5xl h-auto object-contain rounded-3xl shadow-2xl"
           />
         </div>
 
