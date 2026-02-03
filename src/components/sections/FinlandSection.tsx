@@ -1,11 +1,6 @@
 export function FinlandSection() {
   return (
-    <section className="relative py-24" style={{ fontFamily: "'Onest', sans-serif" }}>
-      {/* Google Font */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet" />
-      
+    <section className="relative py-24">
       {/* Background image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15"
@@ -20,23 +15,24 @@ export function FinlandSection() {
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">From our mills in Finland to farms across 5 continents — delivering consistent, high-performance nutrition for cattle, poultry, swine, and more.</p>
         </div>
 
-        {/* Stats & Certification Row */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-16">
-          {/* Stats Grid */}
-          <div className="flex gap-4">
-            <div className="bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-2xl px-8 py-6 text-center shadow-lg border border-emerald-400/30">
-              <div className="text-4xl font-black text-white">20+</div>
-              <div className="text-sm font-medium text-emerald-100">Years Experience</div>
+        {/* Stats & Certification */}
+        <div className="flex flex-col items-center gap-6 mb-16">
+          {/* Stats */}
+          <div className="flex items-center gap-12">
+            <div className="text-center">
+              <div className="text-5xl font-black text-emerald-600">20+</div>
+              <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide mt-1">Years Experience</div>
             </div>
-            <div className="bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl px-8 py-6 text-center shadow-lg border border-blue-400/30">
-              <div className="text-4xl font-black text-white">350+</div>
-              <div className="text-sm font-medium text-blue-100">Tons per year</div>
+            <div className="w-px h-16 bg-slate-300"></div>
+            <div className="text-center">
+              <div className="text-5xl font-black text-blue-600">350000+</div>
+              <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide mt-1">Tons per year</div>
             </div>
           </div>
           
-          {/* Elvi Certified Badge */}
-          <div className="flex items-center gap-3 bg-white rounded-2xl px-6 py-4 shadow-lg border border-slate-200">
-            <span className="text-slate-600 font-medium">Certified by:</span>
+          {/* Elvi Certified */}
+          <div className="flex items-center gap-4">
+            <span className="text-slate-500 font-medium text-sm uppercase tracking-wide">Certified by:</span>
             <a 
               href="https://elvimerkki.fi" 
               target="_blank" 
@@ -46,7 +42,7 @@ export function FinlandSection() {
               <img 
                 src="/certview.png" 
                 alt="Elvi Certified" 
-                className="h-16 w-auto object-contain"
+                className="h-28 w-auto object-contain"
               />
             </a>
           </div>
