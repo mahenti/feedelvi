@@ -1,5 +1,4 @@
 import { Award, Shield, CheckCircle, Globe, Factory } from "lucide-react";
-import { useTranslation } from "react-i18next";
 
 const partners = [
   { src: "/partners/partners (1).jpg", alt: "Partner 1" },
@@ -38,8 +37,6 @@ const exportMarkets = [
 ];
 
 export function PartnersPage() {
-  const { t } = useTranslation();
-  
   return (
     <div className="min-h-screen bg-[#f5f0e4]" style={{ fontFamily: 'Onest, sans-serif' }}>
       {/* Hero Section */}
