@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer className="bg-[#133425] text-white overflow-hidden" style={{ fontFamily: 'Onest, sans-serif' }}>
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-20 pb-8">
         
         {/* Top Section - Large Typography */}
         <div className="mb-20">
