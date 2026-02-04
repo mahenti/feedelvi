@@ -45,14 +45,17 @@ export function Header({ onOpenQuote }: HeaderProps) {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            <Link to="/products" className="text-white font-bold hover:text-[#e7dbbf] transition-colors drop-shadow-lg">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+            <Link to="/products" className="text-white font-bold hover:text-[#e7dbbf] transition-colors drop-shadow-lg text-sm lg:text-base">
               {t('nav.products')}
             </Link>
-            <Link to="/about" className="text-white font-bold hover:text-[#e7dbbf] transition-colors drop-shadow-lg">
+            <Link to="/about" className="text-white font-bold hover:text-[#e7dbbf] transition-colors drop-shadow-lg text-sm lg:text-base">
               {t('nav.about')}
             </Link>
-            <Link to="/contact" className="text-white font-bold hover:text-[#e7dbbf] transition-colors drop-shadow-lg">
+            <Link to="/partners" className="text-white font-bold hover:text-[#e7dbbf] transition-colors drop-shadow-lg text-sm lg:text-base">
+              Partners
+            </Link>
+            <Link to="/contact" className="text-white font-bold hover:text-[#e7dbbf] transition-colors drop-shadow-lg text-sm lg:text-base">
               {t('nav.contact')}
             </Link>
           </nav>
@@ -111,6 +114,13 @@ export function Header({ onOpenQuote }: HeaderProps) {
             className="text-white text-2xl font-bold hover:text-[#e7dbbf] transition-colors"
           >
             {t('nav.about')}
+          </Link>
+          <Link 
+            to="/partners" 
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-white text-2xl font-bold hover:text-[#e7dbbf] transition-colors"
+          >
+            Partners
           </Link>
           <Link 
             to="/contact" 

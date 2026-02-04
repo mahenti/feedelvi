@@ -78,13 +78,30 @@ export function Footer() {
                   <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
-              {[t('footer.facilities'), t('footer.sustainability'), t('footer.quality'), t('footer.careers')].map((item) => (
-                <li key={item}>
-                  <span className="text-lg text-white/80 font-bold">
-                    {item}
-                  </span>
-                </li>
-              ))}
+              <li>
+                <Link to="/facilities" className="text-lg text-white/80 hover:text-[#e7dbbf] transition-colors flex items-center gap-2 group font-bold">
+                  {t('footer.facilities')}
+                  <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+              </li>
+              <li>
+                <Link to="/sustainability" className="text-lg text-white/80 hover:text-[#e7dbbf] transition-colors flex items-center gap-2 group font-bold">
+                  {t('footer.sustainability')}
+                  <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+              </li>
+              <li>
+                <Link to="/quality" className="text-lg text-white/80 hover:text-[#e7dbbf] transition-colors flex items-center gap-2 group font-bold">
+                  {t('footer.quality')}
+                  <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+              </li>
+              <li>
+                <Link to="/careers" className="text-lg text-white/80 hover:text-[#e7dbbf] transition-colors flex items-center gap-2 group font-bold">
+                  {t('footer.careers')}
+                  <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+              </li>
             </ul>
           </div>
 
