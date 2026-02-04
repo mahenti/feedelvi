@@ -14,36 +14,102 @@ const brandColors = [
   "#9B7CB6",    // Purple
 ];
 
+const textColors = [
+  "#FFFFFF",    // White
+  "#FFFFFF",    // White
+  "#2D3A2D",    // Dark text for light bg
+  "#2D3A2D",    // Dark text for light bg
+  "#FFFFFF",    // White
+];
+
 export function PartnersBanner() {
   return (
-    <section className="py-16 bg-gradient-to-b from-[#FAFBF8] to-white">
-      {/* Header */}
-      <div className="text-center mb-12">
-        <h3 className="text-sm font-black text-slate-400 uppercase tracking-[0.3em] mb-2">
-          Trusted Partners
-        </h3>
-        <p className="text-slate-500 text-sm">Certifications & Associations</p>
-      </div>
-
-      {/* Connected Partner Boxes */}
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="flex flex-wrap md:flex-nowrap justify-center">
-          {partnerLogos.map((logo, index) => (
-            <div
-              key={index}
-              className="flex-1 min-w-[180px] min-h-[160px] flex items-center justify-center p-6 transition-all duration-300 hover:brightness-110"
-              style={{
-                backgroundColor: brandColors[index],
-              }}
-            >
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="max-w-full max-h-28 w-auto h-auto object-contain drop-shadow-lg"
-              />
-            </div>
-          ))}
-        </div>
+    <section className="w-full">
+      {/* Connected Partner Boxes - Full Width */}
+      <div className="flex flex-col md:flex-row w-full">
+        {partnerLogos.map((logo, index) => (
+          <div
+            key={index}
+            className="flex-1 min-h-[280px] flex flex-col items-center justify-center p-8 transition-all duration-300 hover:brightness-110"
+            style={{
+              backgroundColor: brandColors[index],
+            }}
+          >
+            {/* Text Content */}
+            {index === 0 && (
+              <div className="text-center mb-6">
+                <h3 
+                  className="text-3xl md:text-4xl font-black uppercase tracking-wider"
+                  style={{ color: textColors[index] }}
+                >
+                  TRUSTED
+                </h3>
+                <p className="text-sm mt-2 opacity-80" style={{ color: textColors[index] }}>
+                  Partners
+                </p>
+              </div>
+            )}
+            {index === 1 && (
+              <div className="text-center mb-6">
+                <h3 
+                  className="text-3xl md:text-4xl font-black uppercase tracking-wider"
+                  style={{ color: textColors[index] }}
+                >
+                  CERTIFIED
+                </h3>
+                <p className="text-sm mt-2 opacity-80" style={{ color: textColors[index] }}>
+                  Quality
+                </p>
+              </div>
+            )}
+            {index === 2 && (
+              <div className="text-center mb-6">
+                <h3 
+                  className="text-3xl md:text-4xl font-black uppercase tracking-wider"
+                  style={{ color: textColors[index] }}
+                >
+                  GLOBAL
+                </h3>
+                <p className="text-sm mt-2 opacity-80" style={{ color: textColors[index] }}>
+                  Standards
+                </p>
+              </div>
+            )}
+            {index === 3 && (
+              <div className="text-center mb-6">
+                <h3 
+                  className="text-3xl md:text-4xl font-black uppercase tracking-wider"
+                  style={{ color: textColors[index] }}
+                >
+                  FINNISH
+                </h3>
+                <p className="text-sm mt-2 opacity-80" style={{ color: textColors[index] }}>
+                  Excellence
+                </p>
+              </div>
+            )}
+            {index === 4 && (
+              <div className="text-center mb-6">
+                <h3 
+                  className="text-3xl md:text-4xl font-black uppercase tracking-wider"
+                  style={{ color: textColors[index] }}
+                >
+                  PREMIUM
+                </h3>
+                <p className="text-sm mt-2 opacity-80" style={{ color: textColors[index] }}>
+                  Associations
+                </p>
+              </div>
+            )}
+            
+            {/* Logo */}
+            <img
+              src={logo.src}
+              alt={logo.alt}
+              className="max-w-full max-h-24 w-auto h-auto object-contain rounded-2xl shadow-lg"
+            />
+          </div>
+        ))}
       </div>
     </section>
   );
