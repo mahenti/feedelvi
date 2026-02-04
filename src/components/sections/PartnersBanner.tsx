@@ -1,77 +1,50 @@
-const partners = [
-  { name: "ELVIMERKKI", color: "#5B8C5A" },
-  { name: "MASOLA", color: "#205a40" },
-  { name: "KESTÄVÄSTI SUOMESTA", color: "#B8956C" },
-  { name: "PUHTAAN LEIVÄN PUOLESTA", color: "#D4A84B" },
-  { name: "TÄYSJYVÄ", color: "#9B7CB6" },
-  { name: "REILU KAUPPA", color: "#C98B8B" },
-  { name: "NORDIC SWAN ECOLABEL", color: "#5B8C5A" },
-  { name: "JOUTSENMERKKI", color: "#205a40" },
-  { name: "ELVIMERKKI", color: "#5B8C5A" },
-  { name: "MASOLA", color: "#205a40" },
-  { name: "KESTÄVÄSTI SUOMESTA", color: "#B8956C" },
-  { name: "PUHTAAN LEIVÄN PUOLESTA", color: "#D4A84B" },
-  { name: "TÄYSJYVÄ", color: "#9B7CB6" },
-  { name: "REILU KAUPPA", color: "#C98B8B" },
-  { name: "NORDIC SWAN ECOLABEL", color: "#5B8C5A" },
-  { name: "JOUTSENMERKKI", color: "#205a40" },
+const partnerLogos = [
+  { src: "/partners/partners (1).jpg", alt: "Partner 1" },
+  { src: "/partners/partners - Copy (1).jpg", alt: "Partner 2" },
+  { src: "/partners/partners - Copy (2) (1).jpg", alt: "Partner 3" },
+  { src: "/partners/partners - Copy (3) (1).jpg", alt: "Partner 4" },
+  { src: "/partners/partners - Copy (4) (1).jpg", alt: "Partner 5" },
+];
+
+const brandColors = [
+  "#5B8C5A",    // Primary Green
+  "#205a40",    // Dark Green
+  "#B8956C",    // Tan/Beige
+  "#D4A84B",    // Gold/Amber
+  "#9B7CB6",    // Purple
 ];
 
 export function PartnersBanner() {
   return (
-    <section className="py-12 bg-gradient-to-r from-[#FAFBF8] via-white to-[#F0F4F0] overflow-hidden">
+    <section className="py-16 bg-gradient-to-b from-[#FAFBF8] to-white">
       {/* Header */}
-      <div className="text-center mb-8">
-        <h3 className="text-sm font-black text-slate-400 uppercase tracking-[0.3em]">
-          Trusted By Industry Leaders
+      <div className="text-center mb-12">
+        <h3 className="text-sm font-black text-slate-400 uppercase tracking-[0.3em] mb-2">
+          Trusted Partners
         </h3>
+        <p className="text-slate-500 text-sm">Certifications & Associations</p>
       </div>
 
-      {/* Scrolling Banner Container */}
-      <div className="relative">
-        {/* Fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#FAFBF8] to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#F0F4F0] to-transparent z-10" />
-
-        {/* Scrolling Track */}
-        <div className="flex animate-scroll">
-          {partners.map((partner, index) => (
+      {/* Connected Partner Boxes */}
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex flex-wrap md:flex-nowrap justify-center">
+          {partnerLogos.map((logo, index) => (
             <div
               key={index}
-              className="flex-shrink-0 mx-4 px-8 py-4 rounded-full border-2 transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer"
+              className="flex-1 min-w-[180px] min-h-[160px] flex items-center justify-center p-6 transition-all duration-300 hover:brightness-110"
               style={{
-                borderColor: partner.color,
-                backgroundColor: `${partner.color}10`,
+                backgroundColor: brandColors[index],
               }}
             >
-              <span
-                className="text-lg font-black uppercase tracking-wider whitespace-nowrap"
-                style={{ color: partner.color }}
-              >
-                {partner.name}
-              </span>
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="max-w-full max-h-28 w-auto h-auto object-contain drop-shadow-lg"
+              />
             </div>
           ))}
         </div>
       </div>
-
-      {/* CSS Animation */}
-      <style>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        .animate-scroll {
-          animation: scroll 30s linear infinite;
-        }
-        .animate-scroll:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   );
 }
