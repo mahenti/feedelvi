@@ -42,8 +42,8 @@ export function AboutPage() {
             </div>
             <div className="bg-[#133425] rounded-3xl p-8 lg:p-12">
               <img 
-                src="/ElviLicense.jpeg" 
-                alt="Elvi Inkeri Official License" 
+                src="/z23.jpg" 
+                alt="Elvi Inkeri Facility" 
                 className="w-full rounded-2xl shadow-2xl"
               />
               <p className="text-white/80 text-center mt-4 text-sm">
