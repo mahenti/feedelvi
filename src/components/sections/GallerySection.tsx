@@ -1,35 +1,5 @@
 import { Award, Building2, Factory, Users, Globe, Shield } from 'lucide-react';
 
-const facilityImages = [
-  { src: '/aa1.jpg', title: 'Modern Production Line', category: 'Production' },
-  { src: '/aa2s1.jpg', title: 'Quality Control Lab', category: 'Quality' },
-];
-
-const productionImages = [
-  { src: '/s1a1.jpg', title: 'Manufacturing Excellence', category: 'Manufacturing' },
-  { src: '/s1a2.jpg', title: 'State-of-the-Art Equipment', category: 'Equipment' },
-  { src: '/s1a3.jpg', title: 'Precision Processing', category: 'Processing' },
-  { src: '/s1a4.jpg', title: 'Advanced Machinery', category: 'Machinery' },
-  { src: '/s1a5.jpg', title: 'Quality Standards', category: 'Standards' },
-  { src: '/s1a6.jpg', title: 'Production Floor', category: 'Facility' },
-  { src: '/s1a7.jpg', title: 'Technical Operations', category: 'Operations' },
-  { src: '/s1a8.jpg', title: 'Industrial Scale', category: 'Scale' },
-  { src: '/s1a9.jpg', title: 'Modern Facility', category: 'Facility' },
-  { src: '/s1a10.jpg', title: 'Engineering Excellence', category: 'Engineering' },
-  { src: '/s1a11.jpg', title: 'Quality Assurance', category: 'Quality' },
-  { src: '/s1a12.jpg', title: 'Production Capacity', category: 'Capacity' },
-  { src: '/s1a13.jpg', title: 'World-Class Facility', category: 'Facility' },
-  { src: '/s1a14.jpg', title: 'Research & Development', category: 'R&D' },
-  { src: '/s1a15.jpg', title: 'Innovation Hub', category: 'Innovation' },
-];
-
-const teamImages = [
-  { src: '/s2a1.jpg', title: 'Expert Team', category: 'Team' },
-  { src: '/s2a2.jpg', title: 'Professional Staff', category: 'Staff' },
-  { src: '/s2a3.jpg', title: 'Skilled Workforce', category: 'Workforce' },
-  { src: '/s2a4.jpg', title: 'Dedicated Personnel', category: 'Personnel' },
-];
-
 const trustIndicators = [
   { icon: Factory, value: '20+', label: 'Years of Excellence', color: '#5B8C5A' },
   { icon: Building2, value: '350K+', label: 'Tons Annual Capacity', color: '#205a40' },
@@ -38,6 +8,7 @@ const trustIndicators = [
 ];
 
 export function GallerySection() {
+  // Gallery section - no images, text only
   return (
     <section className="relative py-24 bg-gradient-to-b from-[#FAFBF8] via-white to-[#F0F4F0] overflow-hidden">
       {/* Decorative Background Elements */}
@@ -93,99 +64,31 @@ export function GallerySection() {
           ))}
         </div>
 
-        {/* Featured Facility Images */}
+        {/* Featured Facility Images - Production Excellence */}
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-3">
             <Factory className="w-6 h-6 text-emerald-600" />
             Production Excellence
           </h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            {facilityImages.map((image, index) => (
-              <div 
-                key={index}
-                className="group relative overflow-hidden rounded-3xl shadow-xl cursor-pointer"
-              >
-                <img 
-                  src={image.src} 
-                  alt={image.title}
-                  className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <span className="text-emerald-400 text-sm font-semibold uppercase tracking-wide">
-                    {image.category}
-                  </span>
-                  <h4 className="text-white text-xl font-bold mt-1">
-                    {image.title}
-                  </h4>
-                </div>
-              </div>
-            ))}
-          </div>
+          <p className="text-slate-600">World-class production facilities ensuring the highest quality standards.</p>
         </div>
 
-        {/* Production Gallery - Masonry Style */}
+        {/* Production Gallery - Our Facilities */}
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-3">
             <Globe className="w-6 h-6 text-emerald-600" />
             Our Facilities
           </h3>
-          <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
-            {productionImages.map((image, index) => (
-              <div 
-                key={index}
-                className="group relative overflow-hidden rounded-2xl break-inside-avoid cursor-pointer"
-              >
-                <img 
-                  src={image.src} 
-                  alt={image.title}
-                  className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-emerald-900/0 group-hover:bg-emerald-900/60 transition-colors duration-300" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="text-center p-4">
-                    <span className="text-emerald-300 text-xs font-bold uppercase tracking-wider">
-                      {image.category}
-                    </span>
-                    <h4 className="text-white text-lg font-bold mt-1">
-                      {image.title}
-                    </h4>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <p className="text-slate-600">State-of-the-art manufacturing plants across Finland.</p>
         </div>
 
-        {/* Team Section */}
+        {/* Team Section - The People Behind the Quality */}
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-3">
             <Users className="w-6 h-6 text-emerald-600" />
             The People Behind the Quality
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {teamImages.map((image, index) => (
-              <div 
-                key={index}
-                className="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer"
-              >
-                <img 
-                  src={image.src} 
-                  alt={image.title}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/90 via-emerald-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <span className="text-emerald-300 text-xs font-bold uppercase tracking-wide">
-                    {image.category}
-                  </span>
-                  <h4 className="text-white font-bold">
-                    {image.title}
-                  </h4>
-                </div>
-              </div>
-            ))}
-          </div>
+          <p className="text-slate-600">Dedicated professionals committed to excellence in animal nutrition.</p>
         </div>
 
         {/* Trust Statement */}
