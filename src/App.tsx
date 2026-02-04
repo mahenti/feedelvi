@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Header } from "./components/sections/Header";
 import { Hero } from "./components/sections/Hero";
@@ -9,6 +10,7 @@ import { Footer } from "./components/sections/Footer";
 import { AboutPage } from "./components/pages/AboutPage";
 import { ContactPage } from "./components/pages/ContactPage";
 import { ProductsPage } from "./components/pages/ProductsPage";
+import { QuoteForm } from "./components/QuoteForm";
 import { WhatsAppButton } from "./components/WhatsAppButton";
 
 function HomePage() {
@@ -24,10 +26,12 @@ function HomePage() {
 }
 
 function App() {
+  const [isQuoteOpen, setIsQuoteOpen] = useState(false);
+
   return (
     <Router>
       <div className="min-h-screen bg-background">
-        <Header />
+        <Header onOpenQuote={() => setIsQuoteOpen(true)} />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
@@ -35,6 +39,7 @@ function App() {
           <Route path="/products" element={<ProductsPage />} />
         </Routes>
         <Footer />
+        <QuoteForm isOpen={isQuoteOpen} onClose={() => setIsQuoteOpen(false)} />
         <WhatsAppButton />
       </div>
     </Router>
