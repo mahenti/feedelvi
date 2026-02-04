@@ -39,66 +39,54 @@ export function PartnersBanner() {
             {index === 0 && (
               <div className="text-center mb-6">
                 <h3 
-                  className="text-3xl md:text-4xl font-black uppercase tracking-wider"
+                  className="text-4xl md:text-5xl font-black uppercase tracking-wider"
                   style={{ color: textColors[index] }}
                 >
                   TRUSTED
                 </h3>
-                <p className="text-sm mt-2 opacity-80" style={{ color: textColors[index] }}>
-                  Partners
-                </p>
               </div>
             )}
             {index === 1 && (
               <div className="text-center mb-6">
                 <h3 
-                  className="text-3xl md:text-4xl font-black uppercase tracking-wider"
+                  className="text-4xl md:text-5xl font-black uppercase tracking-wider"
                   style={{ color: textColors[index] }}
                 >
-                  CERTIFIED
+                  PARTNERS
                 </h3>
-                <p className="text-sm mt-2 opacity-80" style={{ color: textColors[index] }}>
-                  Quality
-                </p>
               </div>
             )}
             {index === 2 && (
               <div className="text-center mb-6">
                 <h3 
-                  className="text-3xl md:text-4xl font-black uppercase tracking-wider"
+                  className="text-4xl md:text-5xl font-black uppercase tracking-wider"
                   style={{ color: textColors[index] }}
                 >
-                  GLOBAL
+                  CERTIFICATIONS
                 </h3>
-                <p className="text-sm mt-2 opacity-80" style={{ color: textColors[index] }}>
-                  Standards
-                </p>
               </div>
             )}
             {index === 3 && (
               <div className="text-center mb-6">
                 <h3 
-                  className="text-3xl md:text-4xl font-black uppercase tracking-wider"
+                  className="text-4xl md:text-5xl font-black uppercase tracking-wider"
                   style={{ color: textColors[index] }}
                 >
-                  FINNISH
+                  &
                 </h3>
-                <p className="text-sm mt-2 opacity-80" style={{ color: textColors[index] }}>
-                  Excellence
+                <p className="text-xs mt-2 opacity-80 uppercase tracking-widest" style={{ color: textColors[index] }}>
+                  and
                 </p>
               </div>
             )}
             {index === 4 && (
               <div className="text-center mb-6">
                 <h3 
-                  className="text-3xl md:text-4xl font-black uppercase tracking-wider"
+                  className="text-4xl md:text-5xl font-black uppercase tracking-wider"
                   style={{ color: textColors[index] }}
                 >
-                  PREMIUM
+                  ASSOCIATIONS
                 </h3>
-                <p className="text-sm mt-2 opacity-80" style={{ color: textColors[index] }}>
-                  Associations
-                </p>
               </div>
             )}
             
