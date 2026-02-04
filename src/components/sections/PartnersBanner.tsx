@@ -16,7 +16,7 @@ const brandColors = [
 
 export function PartnersBanner() {
   return (
-    <section className="w-full py-16 bg-gradient-to-b from-[#FAFBF8] to-white">
+    <section className="w-full py-16 bg-gradient-to-b from-[#FAFBF8] to-white" style={{ fontFamily: 'Onest, sans-serif' }}>
       {/* Header */}
       <div className="text-center mb-12">
         <h3 className="text-4xl md:text-5xl font-black text-slate-800 uppercase tracking-wider mb-2">
