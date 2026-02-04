@@ -130,16 +130,16 @@ export function GallerySection() {
             <Globe className="w-6 h-6 text-emerald-600" />
             Our Facilities
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1">
+          <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
             {productionImages.map((image, index) => (
               <div 
                 key={index}
-                className="group relative overflow-hidden cursor-pointer aspect-square"
+                className="group relative overflow-hidden rounded-2xl break-inside-avoid cursor-pointer"
               >
                 <img 
                   src={image.src} 
                   alt={image.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-emerald-900/0 group-hover:bg-emerald-900/60 transition-colors duration-300" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
