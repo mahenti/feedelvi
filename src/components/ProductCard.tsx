@@ -144,7 +144,7 @@ export function ProductCard({ product, index }: ProductCardProps) {
           </h3>
 
           {/* Description */}
-          <p className={`text-xs ${theme.text} opacity-70 mb-4 line-clamp-2`}>
+          <p className={`text-xs ${theme.text} opacity-70 mb-4 line-clamp-2`} style={{ fontFamily: 'DM Sans, sans-serif' }}>
             {product.description}
           </p>
 
