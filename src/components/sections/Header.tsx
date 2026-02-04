@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export function Header() {
   return (
-    <header className="w-full" style={{ backgroundColor: '#205a40' }}>
+    <header className="w-full bg-transparent absolute top-0 left-0 right-0 z-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-1">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -16,13 +16,13 @@ export function Header() {
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <Link to="/products" className="text-white/90 hover:text-white font-medium transition-colors">
+            <Link to="/products" className="text-white font-bold hover:text-emerald-200 transition-colors drop-shadow-lg">
               Products
             </Link>
-            <Link to="/about" className="text-white/90 hover:text-white font-medium transition-colors">
+            <Link to="/about" className="text-white font-bold hover:text-emerald-200 transition-colors drop-shadow-lg">
               About
             </Link>
-            <Link to="/contact" className="text-white/90 hover:text-white font-medium transition-colors">
+            <Link to="/contact" className="text-white font-bold hover:text-emerald-200 transition-colors drop-shadow-lg">
               Contact
             </Link>
           </nav>

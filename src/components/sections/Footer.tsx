@@ -118,7 +118,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-[#205a40]">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-2 pt-4 border-t border-[#205a40]">
           <Link to="/" className="text-2xl font-black tracking-tight">
             FEED<span className="text-[#2d805b]">ELVI</span>
           </Link>

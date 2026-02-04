@@ -40,15 +40,12 @@ export function AboutPage() {
                 EU regulations, ensuring that every product meets the highest standards of safety and nutrition.
               </p>
             </div>
-            <div className="bg-[#133425] rounded-3xl p-8 lg:p-12">
+            <div className="bg-[#133425] rounded-3xl p-4 lg:p-6">
               <img 
                 src="/z23.jpg" 
                 alt="Elvi Inkeri Facility" 
                 className="w-full rounded-2xl shadow-2xl"
               />
-              <p className="text-white/80 text-center mt-4 text-sm">
-                Official Finnish Business Registration
-              </p>
             </div>
           </div>
         </div>
