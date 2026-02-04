@@ -1,8 +1,4 @@
-interface HeroProps {
-  onOpenQuote: () => void;
-}
-
-export function Hero({ onOpenQuote }: HeroProps) {
+export function Hero() {
   return (
     <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden">
       {/* Video Background */}
@@ -22,24 +18,11 @@ export function Hero({ onOpenQuote }: HeroProps) {
       {/* Content container */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 drop-shadow-2xl" style={{ fontFamily: 'Onest, sans-serif', textShadow: '4px 4px 8px rgba(0,0,0,0.5)' }}>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white drop-shadow-2xl" style={{ fontFamily: 'Onest, sans-serif', textShadow: '4px 4px 8px rgba(0,0,0,0.5)' }}>
             <span className="text-[#e7dbbf]">Finnish</span> Excellence in
             <br />
             Animal Nutrition
           </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl text-white/90 font-bold mb-10 max-w-3xl mx-auto drop-shadow-lg" style={{ fontFamily: 'Onest, sans-serif' }}>
-            Premium feed solutions crafted with 20+ years of expertise for healthier, more productive livestock
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-[#205a40] hover:bg-[#2d805b] text-white px-10 py-4 rounded-full font-black text-lg uppercase tracking-wider transition-all transform hover:scale-105 shadow-2xl" style={{ fontFamily: 'Onest, sans-serif' }}>
-              Explore Products
-            </button>
-            <button 
-              onClick={onOpenQuote}
-              className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border-2 border-white/50 px-10 py-4 rounded-full font-black text-lg uppercase tracking-wider transition-all transform hover:scale-105" style={{ fontFamily: 'Onest, sans-serif' }}>
-              Get Quote
-            </button>
-          </div>
         </div>
       </div>
 
