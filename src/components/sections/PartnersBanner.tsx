@@ -1,3 +1,5 @@
+import { Award } from 'lucide-react';
+
 const partnerLogos = [
   { src: "/partners/partners (1).jpg", alt: "Partner 1" },
   { src: "/partners/partners - Copy (1).jpg", alt: "Partner 2" },
@@ -18,11 +20,15 @@ export function PartnersBanner() {
   return (
     <section className="w-full py-16 bg-gradient-to-b from-[#FAFBF8] to-white" style={{ fontFamily: 'Onest, sans-serif' }}>
       {/* Header */}
-      <div className="text-center mb-12">
-        <h3 className="text-5xl lg:text-6xl font-black text-slate-900 tracking-wider mb-6" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>
+      <div className="text-center mb-16">
+        <span className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-100 text-emerald-800 text-sm font-bold rounded-full mb-6">
+          <Award className="w-4 h-4" />
+          CERTIFICATIONS
+        </span>
+        <h2 className="text-5xl lg:text-6xl font-black text-slate-900 mb-6" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>
           Trusted Partners
-        </h3>
-        <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        </h2>
+        <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
           Certifications & Associations
         </p>
       </div>
