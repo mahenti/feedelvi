@@ -61,6 +61,16 @@
       "capacity": "Tons Annual Capacity",
       "countries": "Countries Served",
       "certified": "EU Certified"
+    },
+    "production": "Production Excellence",
+    "facilities": "Our Facilities",
+    "people": "The People Behind the Quality",
+    "trustTitle": "Transparency Builds Trust",
+    "trustDescription": "We believe in showing you exactly how your animal nutrition is made. From raw materials to final pellets, every step meets the highest Finnish standards.",
+    "certifications": {
+      "iso": "ISO 9001 Certified",
+      "gmp": "EU GMP+ Standards",
+      "haccp": "HACCP Compliant"
     }
   },
   "footer": {

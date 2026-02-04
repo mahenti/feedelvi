@@ -61,6 +61,16 @@
       "capacity": "Tonnia Vuosikapasiteetti",
       "countries": "Palvellut Maat",
       "certified": "EU Sertifioitu"
+    },
+    "production": "Tuotannon Erinomaisuus",
+    "facilities": "Tilamme",
+    "people": "Laadun Takana Olevat Ihmiset",
+    "trustTitle": "Läpinäkyvyys Rakentaa Luottamuksen",
+    "trustDescription": "Uskomme näyttäväsinne tarkalleen miten eläinravintonne valmistetaan. Raaka-aineista lopullisiin pelletteihin, jokainen vaihe täyttää korkeimmat suomalaiset standardit.",
+    "certifications": {
+      "iso": "ISO 9001 Sertifioitu",
+      "gmp": "EU GMP+ Standardit",
+      "haccp": "HACCP Vaatimukset"
     }
   },
   "footer": {

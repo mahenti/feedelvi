@@ -1,4 +1,5 @@
 import { Award } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const partnerLogos = [
   { src: "/partners/partners (1).jpg", alt: "Partner 1" },
@@ -17,19 +18,21 @@ const brandColors = [
 ];
 
 export function PartnersBanner() {
+  const { t } = useTranslation();
+  
   return (
     <section className="w-full py-16 bg-gradient-to-b from-[#FAFBF8] to-white" style={{ fontFamily: 'Onest, sans-serif' }}>
       {/* Header */}
       <div className="text-center mb-16">
         <span className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-100 text-emerald-800 text-sm font-bold rounded-full mb-6">
           <Award className="w-4 h-4" />
-          CERTIFICATIONS
+          {t('partners.badge')}
         </span>
         <h2 className="text-5xl lg:text-6xl font-black text-slate-900 mb-6" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>
-          Trusted Partners
+          {t('partners.title')}
         </h2>
         <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-          Certifications & Associations
+          {t('partners.subtitle')}
         </p>
       </div>
 

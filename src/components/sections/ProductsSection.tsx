@@ -1,5 +1,6 @@
 import { ProductCard, type Product } from "@/components/ProductCard";
 import { Wheat } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const products: Product[] = [
   // BOVINE RANGE
@@ -28,14 +29,15 @@ const sectionBackgrounds: Record<string, string> = {
 };
 
 const sections = [
-  { id: "bovine", title: "Cattle", subtitle: "Bovine Range", color: "#5B8C5A", textColor: "text-[#2D4A2D]", products: products.filter(p => p.category === "bovine") },
-  { id: "ovine-caprine", title: "Sheep & Goats", subtitle: "Ovine–Caprine Range", color: "#B8956C", textColor: "text-[#5C4A2A]", products: products.filter(p => p.category === "ovine-caprine") },
-  { id: "porcine", title: "Pigs", subtitle: "Porcine Range", color: "#C98B8B", textColor: "text-[#5C2A2A]", products: products.filter(p => p.category === "porcine") },
-  { id: "lagomorph", title: "Rabbits", subtitle: "Lagomorph Range", color: "#9B7CB6", textColor: "text-[#3D2A4A]", products: products.filter(p => p.category === "lagomorph") },
-  { id: "poultry", title: "Poultry", subtitle: "Poultry Range", color: "#D4A84B", textColor: "text-[#5C4A1A]", products: products.filter(p => p.category === "poultry") },
+  { id: "bovine", titleKey: "products.categories.cattle", subtitleKey: "products.categories.cattleSubtitle", color: "#5B8C5A", textColor: "text-[#2D4A2D]", products: products.filter(p => p.category === "bovine") },
+  { id: "ovine-caprine", titleKey: "products.categories.sheepGoats", subtitleKey: "products.categories.sheepGoatsSubtitle", color: "#B8956C", textColor: "text-[#5C4A2A]", products: products.filter(p => p.category === "ovine-caprine") },
+  { id: "porcine", titleKey: "products.categories.pigs", subtitleKey: "products.categories.pigsSubtitle", color: "#C98B8B", textColor: "text-[#5C2A2A]", products: products.filter(p => p.category === "porcine") },
+  { id: "lagomorph", titleKey: "products.categories.rabbits", subtitleKey: "products.categories.rabbitsSubtitle", color: "#9B7CB6", textColor: "text-[#3D2A4A]", products: products.filter(p => p.category === "lagomorph") },
+  { id: "poultry", titleKey: "products.categories.poultry", subtitleKey: "products.categories.poultrySubtitle", color: "#D4A84B", textColor: "text-[#5C4A1A]", products: products.filter(p => p.category === "poultry") },
 ];
 
 export function ProductsSection() {
+  const { t } = useTranslation();
   return (
     <section className="bg-[#FAFBF8]">
       {/* Main Header */}
@@ -43,13 +45,13 @@ export function ProductsSection() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <span className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-100 text-emerald-800 text-sm font-bold rounded-full mb-6">
             <Wheat className="w-4 h-4" />
-            OUR FEED COLLECTION
+            {t('products.badge')}
           </span>
           <h2 className="text-5xl lg:text-6xl font-black text-slate-900 mb-6" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>
-            Nutrition by Animal
+            {t('products.title')}
           </h2>
           <p className="text-lg text-[#5A6B5A] leading-relaxed max-w-2xl mx-auto">
-            Specialized formulas crafted for each species. Scroll to explore our complete range.
+            {t('products.description')}
           </p>
         </div>
       </div>
@@ -86,9 +88,9 @@ export function ProductsSection() {
                     letterSpacing: '0.1em',
                   }}
                 >
-                  {section.title}
+                  {t(section.titleKey)}
                 </h3>
-                <p className="text-white/80 uppercase tracking-[0.2em] text-sm font-semibold">{section.subtitle}</p>
+                <p className="text-white/80 uppercase tracking-[0.2em] text-sm font-semibold">{t(section.subtitleKey)}</p>
                 <div 
                   className="w-32 h-1.5 rounded-full mt-5 mx-auto"
                   style={{ backgroundColor: section.color }}

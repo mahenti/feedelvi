@@ -1,4 +1,5 @@
 import { Award, Building2, Factory, Users, Globe, Shield } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const productionExcellenceImages = [
   { src: '/gallery/z1.jpg', title: 'Automated Production Line', category: 'Manufacturing' },
@@ -40,13 +41,14 @@ const teamRoles = [
 ];
 
 const trustIndicators = [
-  { icon: Factory, value: '20+', label: 'Years of Excellence', color: '#5B8C5A' },
-  { icon: Building2, value: '350K+', label: 'Tons Annual Capacity', color: '#205a40' },
-  { icon: Users, value: '25+', label: 'Countries Served', color: '#B8956C' },
-  { icon: Shield, value: '100%', label: 'EU Certified', color: '#D4A84B' },
+  { icon: Factory, value: '20+', labelKey: 'gallery.stats.years', color: '#5B8C5A' },
+  { icon: Building2, value: '350K+', labelKey: 'gallery.stats.capacity', color: '#205a40' },
+  { icon: Users, value: '25+', labelKey: 'gallery.stats.countries', color: '#B8956C' },
+  { icon: Shield, value: '100%', labelKey: 'gallery.stats.certified', color: '#D4A84B' },
 ];
 
 export function GallerySection() {
+  const { t } = useTranslation();
   return (
     <section className="relative py-24 bg-gradient-to-b from-[#FAFBF8] via-white to-[#F0F4F0] overflow-hidden">
       {/* Decorative Background Elements */}
@@ -60,14 +62,13 @@ export function GallerySection() {
         <div className="text-center mb-16">
           <span className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-100 text-emerald-800 text-sm font-bold rounded-full mb-6">
             <Award className="w-4 h-4" />
-            TRUST & TRANSPARENCY
+            {t('gallery.badge')}
           </span>
           <h2 className="text-5xl lg:text-6xl font-black text-slate-900 mb-6" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>
-            Behind the Feed
+            {t('gallery.title')}
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Step inside our world-class Finnish facilities where premium nutrition comes to life. 
-            Every pellet reflects our commitment to quality, innovation, and animal welfare.
+            {t('gallery.description')}
           </p>
         </div>
 
@@ -94,7 +95,7 @@ export function GallerySection() {
                     {indicator.value}
                   </div>
                   <div className="text-sm text-slate-500 font-medium">
-                    {indicator.label}
+                    {t(indicator.labelKey)}
                   </div>
                 </div>
               </div>
@@ -106,7 +107,7 @@ export function GallerySection() {
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-3">
             <Factory className="w-6 h-6 text-emerald-600" />
-            Production Excellence
+            {t('gallery.production')}
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {productionExcellenceImages.slice(0, 6).map((image, index) => (
@@ -137,7 +138,7 @@ export function GallerySection() {
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-3">
             <Globe className="w-6 h-6 text-emerald-600" />
-            Our Facilities
+            {t('gallery.facilities')}
           </h3>
           <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
             {facilityImages.map((image, index) => (
@@ -170,7 +171,7 @@ export function GallerySection() {
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-3">
             <Users className="w-6 h-6 text-emerald-600" />
-            The People Behind the Quality
+            {t('gallery.people')}
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {teamRoles.map((person, index) => (
@@ -198,21 +199,20 @@ export function GallerySection() {
         {/* Trust Statement */}
         <div className="text-center bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-3xl p-12 shadow-2xl">
           <h3 className="text-3xl font-bold text-white mb-4">
-            Transparency Builds Trust
+            {t('gallery.trustTitle')}
           </h3>
           <p className="text-emerald-100 text-lg max-w-2xl mx-auto mb-8">
-            We believe in showing you exactly how your animal nutrition is made. 
-            From raw materials to final pellets, every step meets the highest Finnish standards.
+            {t('gallery.trustDescription')}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <span className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-white font-semibold border border-white/20">
-              ISO 9001 Certified
+              {t('gallery.certifications.iso')}
             </span>
             <span className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-white font-semibold border border-white/20">
-              EU GMP+ Standards
+              {t('gallery.certifications.gmp')}
             </span>
             <span className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-white font-semibold border border-white/20">
-              HACCP Compliant
+              {t('gallery.certifications.haccp')}
             </span>
           </div>
         </div>
