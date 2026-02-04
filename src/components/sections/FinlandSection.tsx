@@ -27,15 +27,15 @@ export function FinlandSection() {
         {/* Stats & Certification */}
         <div className="flex flex-col items-center gap-4 mb-16">
           {/* Stats */}
-          <div className="flex items-center gap-12">
+          <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-12">
             <div className="text-center">
-              <div className="text-5xl font-black text-emerald-600">20+</div>
-              <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide mt-1">Years Experience</div>
+              <div className="text-4xl sm:text-5xl font-black text-emerald-600">20+</div>
+              <div className="text-xs sm:text-sm font-semibold text-slate-600 uppercase tracking-wide mt-1">Years Experience</div>
             </div>
-            <div className="w-px h-16 bg-slate-300"></div>
+            <div className="w-16 h-px sm:w-px sm:h-16 bg-slate-300"></div>
             <div className="text-center">
-              <div className="text-5xl font-black text-blue-600">350000+</div>
-              <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide mt-1">Tons per year</div>
+              <div className="text-4xl sm:text-5xl font-black text-blue-600">350K+</div>
+              <div className="text-xs sm:text-sm font-semibold text-slate-600 uppercase tracking-wide mt-1">Tons per year</div>
             </div>
           </div>
           
