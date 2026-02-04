@@ -12,8 +12,6 @@ export function QuoteForm({ isOpen, onClose }: QuoteFormProps) {
     email: '',
     phone: '',
     company: '',
-    animalType: '',
-    quantity: '',
     message: ''
   });
 
@@ -176,46 +174,6 @@ export function QuoteForm({ isOpen, onClose }: QuoteFormProps) {
             </div>
           </div>
 
-          {/* Animal Type & Quantity */}
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-2">
-              <label className="text-sm font-bold text-[#133425] uppercase tracking-wider" style={{ fontFamily: 'Onest, sans-serif' }}>
-                Animal Type *
-              </label>
-              <select
-                name="animalType"
-                required
-                value={formData.animalType}
-                onChange={handleChange}
-                className="w-full px-4 py-3 rounded-xl border-2 border-[#205a40]/20 focus:border-[#205a40] bg-white text-[#133425] font-medium transition-colors outline-none appearance-none cursor-pointer"
-                style={{ fontFamily: 'Onest, sans-serif' }}
-              >
-                <option value="">Select animal type</option>
-                <option value="cattle">Cattle</option>
-                <option value="sheep-goat">Sheep & Goats</option>
-                <option value="pigs">Pigs</option>
-                <option value="poultry">Poultry</option>
-                <option value="rabbits">Rabbits</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-
-            <div className="space-y-2">
-              <label className="text-sm font-bold text-[#133425] uppercase tracking-wider" style={{ fontFamily: 'Onest, sans-serif' }}>
-                Estimated Quantity (kg/month)
-              </label>
-              <input
-                type="text"
-                name="quantity"
-                value={formData.quantity}
-                onChange={handleChange}
-                className="w-full px-4 py-3 rounded-xl border-2 border-[#205a40]/20 focus:border-[#205a40] bg-white text-[#133425] font-medium transition-colors outline-none"
-                style={{ fontFamily: 'Onest, sans-serif' }}
-                placeholder="e.g., 5000"
-              />
-            </div>
-          </div>
-
           {/* Message */}
           <div className="space-y-2">
             <label className="text-sm font-bold text-[#133425] uppercase tracking-wider" style={{ fontFamily: 'Onest, sans-serif' }}>
@@ -230,7 +188,7 @@ export function QuoteForm({ isOpen, onClose }: QuoteFormProps) {
                 onChange={handleChange}
                 className="w-full pl-12 pr-4 py-3 rounded-xl border-2 border-[#205a40]/20 focus:border-[#205a40] bg-white text-[#133425] font-medium transition-colors outline-none resize-none"
                 style={{ fontFamily: 'Onest, sans-serif' }}
-                placeholder="Tell us about your specific needs..."
+                placeholder="Tell us about your specific needs, animal types, quantities..."
               />
             </div>
           </div>
