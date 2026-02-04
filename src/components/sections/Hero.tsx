@@ -1,6 +1,20 @@
 export function Hero() {
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#205a40] to-[#133425]">
+    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/herovideo.mp4" type="video/mp4" />
+      </video>
+
+      {/* Dark Overlay for text readability */}
+      <div className="absolute inset-0 bg-black/40" />
+
       {/* Content container - blank for now */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
