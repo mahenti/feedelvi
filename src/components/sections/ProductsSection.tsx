@@ -45,7 +45,7 @@ export function ProductsSection() {
             <Wheat className="w-4 h-4" />
             <span>Our Feed Collection</span>
           </div>
-          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-[#2D3A2D] mb-6">
+          <h2 className="text-5xl lg:text-6xl font-black text-slate-900 mb-6" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>
             Nutrition by Animal
           </h2>
           <p className="text-lg text-[#5A6B5A] leading-relaxed max-w-2xl mx-auto">
