@@ -4,7 +4,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-1">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center -ml-20 lg:-ml-28">
+          <a href="/" className="flex items-center -ml-16 lg:-ml-24">
             <img 
               src="/logotranspe.png" 
               alt="FeedElvi Logo" 
@@ -28,7 +28,7 @@ export function Header() {
           {/* CTA Button */}
           <a 
             href="#contact" 
-            className="bg-white hover:bg-slate-100 text-emerald-600 px-6 py-2.5 rounded-full font-semibold transition-colors"
+            className="bg-white hover:bg-slate-100 text-emerald-600 px-6 py-2.5 rounded-full font-black text-sm uppercase tracking-wide transition-colors"
           >
             Get Quote
           </a>

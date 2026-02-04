@@ -33,12 +33,12 @@ export function PartnersBanner() {
         </p>
       </div>
 
-      {/* Connected Partner Boxes - Full Width */}
-      <div className="flex flex-col md:flex-row w-full">
+      {/* Connected Partner Boxes - Full Width, Single Line */}
+      <div className="flex flex-row w-full overflow-x-auto">
         {partnerLogos.map((logo, index) => (
           <div
             key={index}
-            className="flex-1 min-h-[280px] flex items-center justify-center p-8 transition-all duration-300 hover:brightness-110"
+            className="flex-shrink-0 w-[45%] sm:w-[30%] md:flex-1 min-h-[180px] sm:min-h-[220px] md:min-h-[280px] flex items-center justify-center p-4 sm:p-6 md:p-8 transition-all duration-300 hover:brightness-110"
             style={{
               backgroundColor: brandColors[index],
             }}
@@ -47,7 +47,7 @@ export function PartnersBanner() {
             <img
               src={logo.src}
               alt={logo.alt}
-              className="max-w-full max-h-32 w-auto h-auto object-contain rounded-2xl shadow-lg"
+              className="max-w-full max-h-20 sm:max-h-28 md:max-h-32 w-auto h-auto object-contain rounded-xl md:rounded-2xl shadow-lg"
             />
           </div>
         ))}

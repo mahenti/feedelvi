@@ -1,14 +1,19 @@
 export function Hero() {
   return (
     <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-      {/* Subtle gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(43,30%,97%)] via-[hsl(43,25%,94%)] to-[hsl(142,20%,92%)]" />
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/samplevideo.mp4" type="video/mp4" />
+      </video>
       
-      {/* Decorative elements */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[hsl(142,30%,75%)] rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[hsl(42,50%,70%)] rounded-full blur-3xl" />
-      </div>
+      {/* Dark Overlay for text readability */}
+      <div className="absolute inset-0 bg-black/40" />
 
       {/* Content container - blank for now */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
