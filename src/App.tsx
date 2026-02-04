@@ -4,6 +4,7 @@ import { FinlandSection } from "./components/sections/FinlandSection";
 import { ProductsSection } from "./components/sections/ProductsSection";
 import { PartnersBanner } from "./components/sections/PartnersBanner";
 import { GallerySection } from "./components/sections/GallerySection";
+import { Footer } from "./components/sections/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <ProductsSection />
       <PartnersBanner />
       <GallerySection />
+      <Footer />
     </div>
   );
 }
