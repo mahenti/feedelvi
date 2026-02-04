@@ -11,7 +11,7 @@ export function Footer() {
           <h2 className="text-6xl md:text-7xl lg:text-8xl font-black leading-none mb-4">
             Let's Talk
           </h2>
-          <p className="text-2xl md:text-3xl text-[#e7dbbf] font-bold uppercase" style={{ fontFamily: 'DM Sans, sans-serif' }}>
+          <p className="text-3xl md:text-4xl lg:text-5xl text-[#e7dbbf] uppercase" style={{ fontFamily: 'Onest, sans-serif', fontWeight: 900, letterSpacing: '0.05em' }}>
             ABOUT YOUR FEED NEEDS
           </p>
         </div>
@@ -101,9 +101,9 @@ export function Footer() {
 
         {/* Large Brand Statement */}
         <div className="border-t border-[#205a40] pt-16 mb-16">
-          <div className="flex flex-col items-center">
-            <img src="/Faviconwhite.png" alt="FeedElvi" className="w-24 h-24 mb-6" />
-            <p className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight text-center">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+            <img src="/Faviconwhite.png" alt="FeedElvi" className="w-32 h-32" />
+            <p className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight text-left">
               <span className="text-[#e7dbbf]">Finnish</span> Quality.<br />
               <span className="text-[#2d805b]">Global</span> Standards.<br />
               <span className="text-white">Trusted</span> Nutrition.
@@ -117,7 +117,7 @@ export function Footer() {
             FEED<span className="text-[#2d805b]">ELVI</span>
           </div>
           <p className="text-sm text-white/60">
-            © 2025 FeedElvi. All rights reserved.
+            © 2026 FeedElvi. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-sm text-white/60 hover:text-[#e7dbbf] transition-colors">
