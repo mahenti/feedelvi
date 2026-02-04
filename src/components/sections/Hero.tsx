@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 export function Hero() {
+  const { t } = useTranslation();
+  
   return (
     <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden">
       {/* Video Background */}
@@ -19,9 +23,7 @@ export function Hero() {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white drop-shadow-2xl" style={{ fontFamily: 'Onest, sans-serif', textShadow: '4px 4px 8px rgba(0,0,0,0.5)' }}>
-            <span className="text-[#e7dbbf]">Finnish</span> Excellence in
-            <br />
-            Animal Nutrition
+            <span className="text-[#e7dbbf]">{t('hero.title').split(' ')[0]}</span> {t('hero.title').split(' ').slice(1).join(' ')}
           </h1>
         </div>
       </div>

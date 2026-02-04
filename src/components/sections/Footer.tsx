@@ -1,7 +1,9 @@
 import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="bg-[#133425] text-white overflow-hidden" style={{ fontFamily: 'Onest, sans-serif' }}>
       {/* Main Footer Content */}
@@ -10,10 +12,10 @@ export function Footer() {
         {/* Top Section - Large Typography */}
         <div className="mb-20">
           <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-none mb-4 break-words">
-            Let's Talk
+            {t('footer.title')}
           </h2>
           <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#e7dbbf] uppercase break-words" style={{ fontFamily: 'Onest, sans-serif', fontWeight: 900, letterSpacing: '0.05em' }}>
-            ABOUT YOUR FEED NEEDS
+            {t('footer.subtitle')}
           </p>
         </div>
 
@@ -23,7 +25,7 @@ export function Footer() {
           {/* Contact */}
           <div className="space-y-6">
             <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-[#2d805b] mb-4">
-              Contact
+              {t('footer.contact')}
             </h3>
             <div className="space-y-4" style={{ fontFamily: 'DM Sans, sans-serif' }}>
               <a href="mailto:info@feedelvi.fi" className="flex items-center gap-3 group font-bold">
@@ -50,7 +52,7 @@ export function Footer() {
           {/* Products */}
           <div className="space-y-6">
             <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-[#2d805b] mb-4">
-              Products
+              {t('footer.products')}
             </h3>
             <ul className="space-y-3" style={{ fontFamily: 'DM Sans, sans-serif' }}>
               {['Bovine Nutrition', 'Ovine-Caprine', 'Porcine Feed', 'Lagomorph', 'Poultry Range'].map((item) => (
@@ -67,16 +69,16 @@ export function Footer() {
           {/* Company */}
           <div className="space-y-6">
             <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-[#2d805b] mb-4">
-              Company
+              {t('footer.company')}
             </h3>
             <ul className="space-y-3" style={{ fontFamily: 'DM Sans, sans-serif' }}>
               <li>
                 <Link to="/about" className="text-lg text-white/80 hover:text-[#e7dbbf] transition-colors flex items-center gap-2 group font-bold">
-                  About Us
+                  {t('footer.aboutUs')}
                   <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
-              {['Our Facilities', 'Sustainability', 'Quality Standards', 'Careers'].map((item) => (
+              {[t('footer.facilities'), t('footer.sustainability'), t('footer.quality'), t('footer.careers')].map((item) => (
                 <li key={item}>
                   <span className="text-lg text-white/80 font-bold">
                     {item}
@@ -123,14 +125,14 @@ export function Footer() {
             FEED<span className="text-[#2d805b]">ELVI</span>
           </Link>
           <p className="text-sm text-white/60">
-            © 2026 FeedElvi. All rights reserved.
+            {t('footer.copyright')}
           </p>
           <div className="flex gap-6">
             <span className="text-sm text-white/60">
-              Privacy
+              {t('footer.privacy')}
             </span>
             <span className="text-sm text-white/60">
-              Terms
+              {t('footer.terms')}
             </span>
           </div>
         </div>

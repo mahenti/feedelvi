@@ -1,0 +1,110 @@
+{
+  "nav": {
+    "products": "Tuotteet",
+    "about": "Tietoa",
+    "contact": "Yhteystiedot",
+    "getQuote": "Pyydä Tarjous"
+  },
+  "hero": {
+    "title": "Suomalainen Erinomaisuus Eläinravinnossa",
+    "subtitle": "Premium-rehuratkaisut optimaaliseen eläinterveyteen ja suorituskykyyn"
+  },
+  "finland": {
+    "badge": "Suomalainen Eläinravinto",
+    "title": "Premium-Rehu.",
+    "highlight": "Maailmanlaajuinen Saatavuus.",
+    "description": "Myllyistämme Suomessa maatiloille 5 mantereella — toimitamme johdonmukaista, korkean suorituskyvyn ravitsemusta nautakarjalle, siipikarjalle, sioille ja muille.",
+    "stats": {
+      "years": "Vuoden Kokemus",
+      "tons": "Tonnia vuodessa"
+    },
+    "certified": "Sertifioitu:",
+    "trustStatement": "Suomalaisilta pelloilta maailmanlaajuisille maatiloille — <span class='text-emerald-600 font-bold'>ravitsemusta joka tuottaa tulosta.</span>"
+  },
+  "products": {
+    "badge": "Rehukokoelmamme",
+    "title": "Ravitsemus Eläimen Mukaan",
+    "description": "Erikoisformulat suunniteltu jokaiselle lajille. Selaa nähdäksesi täydellisen valikoimamme.",
+    "categories": {
+      "cattle": "Nautakarja",
+      "cattleSubtitle": "Nauta-Range",
+      "sheepGoats": "Lampaat & Vuohet",
+      "sheepGoatsSubtitle": "Lammas-Vuohi-Range",
+      "pigs": "Siat",
+      "pigsSubtitle": "Sika-Range",
+      "rabbits": "Kanit",
+      "rabbitsSubtitle": "Kani-Range",
+      "poultry": "Siipikarja",
+      "poultrySubtitle": "Siipikarja-Range"
+    },
+    "card": {
+      "benefits": "Edut",
+      "specs": "Tekniset Tiedot",
+      "origin": "Alkuperä",
+      "protein": "Proteiini",
+      "energy": "Energia",
+      "fiber": "Kuitu",
+      "pelletSize": "Pelletti Koko"
+    }
+  },
+  "partners": {
+    "badge": "Sertifikaatit",
+    "title": "Luotetut Kumppanit",
+    "subtitle": "Sertifikaatit & Yhdistykset"
+  },
+  "gallery": {
+    "badge": "Luottamus & Läpinäkyvyys",
+    "title": "Rehun Takana",
+    "description": "Astu maailmanluokan suomalaisiin tiloihimme, joissa premium-ravitsemus herää eloon. Jokainen pelletti heijastaa sitoutumistamme laatuun, innovaatioon ja eläinhyvinvointiin.",
+    "stats": {
+      "years": "Vuotta Erinomaisuutta",
+      "capacity": "Tonnia Vuosikapasiteetti",
+      "countries": "Palvellut Maat",
+      "certified": "EU Sertifioitu"
+    }
+  },
+  "footer": {
+    "title": "Puhutaan",
+    "subtitle": "REHUTARPEISTASI",
+    "contact": "Yhteystiedot",
+    "email": "info@feedelvi.fi",
+    "phone": "+358 12 345 6789",
+    "address": "FI-00000 Helsinki",
+    "country": "Suomi",
+    "products": "Tuotteet",
+    "company": "Yritys",
+    "aboutUs": "Tietoa Meistä",
+    "facilities": "Tilamme",
+    "sustainability": "Kestävyys",
+    "quality": "Laatustandardit",
+    "careers": "Urat",
+    "quickLinks": "Pikalinkit",
+    "home": "Etusivu",
+    "privacy": "Tietosuojakäytäntö",
+    "terms": "Käyttöehdot",
+    "copyright": "© 2025 FeedElvi. Kaikki oikeudet pidätetään."
+  },
+  "quoteForm": {
+    "title": "Pyydä Tarjouksesi",
+    "name": "Koko Nimi",
+    "email": "Sähköposti",
+    "phone": "Puhelin",
+    "company": "Yritys",
+    "message": "Viestisi",
+    "placeholder": "Kerro meille rehutarpeistasi...",
+    "submit": "Pyydä Tarjous",
+    "sending": "Lähetetään...",
+    "successTitle": "Tarjouspyyntö Vastaanotettu!",
+    "successMessage": "Kiitos kiinnostuksestasi. Tiimimme tarkastaa vaatimuksesi ja ottaa yhteyttä sinuun 24 tunnin kuluessa.",
+    "close": "Sulje"
+  },
+  "whatsapp": {
+    "tooltip": "Keskustele kanssamme WhatsAppissa",
+    "message": "Hei! Olen kiinnostunut oppimaan lisää eläinrehutuotteistanne."
+  },
+  "language": {
+    "en": "EN",
+    "fi": "FI",
+    "switch": "Vaihda kieltä"
+  }
+}

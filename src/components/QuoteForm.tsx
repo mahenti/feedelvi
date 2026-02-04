@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { X, Send, User, Mail, Phone, Building, MessageSquare } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface QuoteFormProps {
   isOpen: boolean;
@@ -7,6 +8,7 @@ interface QuoteFormProps {
 }
 
 export function QuoteForm({ isOpen, onClose }: QuoteFormProps) {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -52,17 +54,17 @@ export function QuoteForm({ isOpen, onClose }: QuoteFormProps) {
               <Send className="w-10 h-10 text-white" />
             </div>
             <h3 className="text-2xl font-black text-[#133425] mb-3" style={{ fontFamily: 'Onest, sans-serif' }}>
-              Quote Request Sent!
+              {t('quoteForm.successTitle')}
             </h3>
             <p className="text-[#205a40] font-medium mb-6" style={{ fontFamily: 'Onest, sans-serif' }}>
-              Thank you for your interest. Our team will contact you within 24 hours.
+              {t('quoteForm.successMessage')}
             </p>
             <button
               onClick={onClose}
               className="bg-[#205a40] hover:bg-[#2d805b] text-white px-8 py-3 rounded-full font-black uppercase tracking-wider transition-all"
               style={{ fontFamily: 'Onest, sans-serif' }}
             >
-              Close
+              {t('quoteForm.close')}
             </button>
           </div>
         </div>
@@ -78,7 +80,7 @@ export function QuoteForm({ isOpen, onClose }: QuoteFormProps) {
         <div className="bg-[#205a40] px-8 py-6 rounded-t-3xl flex items-center justify-between">
           <div>
             <h2 className="text-2xl md:text-3xl font-black text-white" style={{ fontFamily: 'Onest, sans-serif' }}>
-              Get Your Quote
+              {t('quoteForm.title')}
             </h2>
             <p className="text-[#e7dbbf] text-sm font-medium mt-1" style={{ fontFamily: 'Onest, sans-serif' }}>
               Premium feed solutions for your livestock
@@ -98,7 +100,7 @@ export function QuoteForm({ isOpen, onClose }: QuoteFormProps) {
             {/* Name */}
             <div className="space-y-2">
               <label className="text-sm font-bold text-[#133425] uppercase tracking-wider" style={{ fontFamily: 'Onest, sans-serif' }}>
-                Full Name *
+                {t('quoteForm.name')} *
               </label>
               <div className="relative">
                 <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#205a40]" />
@@ -118,7 +120,7 @@ export function QuoteForm({ isOpen, onClose }: QuoteFormProps) {
             {/* Email */}
             <div className="space-y-2">
               <label className="text-sm font-bold text-[#133425] uppercase tracking-wider" style={{ fontFamily: 'Onest, sans-serif' }}>
-                Email Address *
+                {t('quoteForm.email')} *
               </label>
               <div className="relative">
                 <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#205a40]" />
@@ -138,7 +140,7 @@ export function QuoteForm({ isOpen, onClose }: QuoteFormProps) {
             {/* Phone */}
             <div className="space-y-2">
               <label className="text-sm font-bold text-[#133425] uppercase tracking-wider" style={{ fontFamily: 'Onest, sans-serif' }}>
-                Phone Number
+                {t('quoteForm.phone')}
               </label>
               <div className="relative">
                 <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#205a40]" />
@@ -157,7 +159,7 @@ export function QuoteForm({ isOpen, onClose }: QuoteFormProps) {
             {/* Company */}
             <div className="space-y-2">
               <label className="text-sm font-bold text-[#133425] uppercase tracking-wider" style={{ fontFamily: 'Onest, sans-serif' }}>
-                Company/Farm Name
+                {t('quoteForm.company')}
               </label>
               <div className="relative">
                 <Building className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#205a40]" />
@@ -177,7 +179,7 @@ export function QuoteForm({ isOpen, onClose }: QuoteFormProps) {
           {/* Message */}
           <div className="space-y-2">
             <label className="text-sm font-bold text-[#133425] uppercase tracking-wider" style={{ fontFamily: 'Onest, sans-serif' }}>
-              Additional Requirements
+              {t('quoteForm.message')}
             </label>
             <div className="relative">
               <MessageSquare className="absolute left-4 top-4 w-5 h-5 text-[#205a40]" />
@@ -202,13 +204,13 @@ export function QuoteForm({ isOpen, onClose }: QuoteFormProps) {
           >
             {isSubmitting ? (
               <>
-                <div className="w-6 h-6 border-3 border-white/30 border-t-white rounded-full animate-spin" />
-                Sending...
+                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                <span>{t('quoteForm.sending')}</span>
               </>
             ) : (
               <>
                 <Send className="w-5 h-5" />
-                Request Quote
+                <span>{t('quoteForm.submit')}</span>
               </>
             )}
           </button>

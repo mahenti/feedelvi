@@ -1,0 +1,110 @@
+{
+  "nav": {
+    "products": "Products",
+    "about": "About",
+    "contact": "Contact",
+    "getQuote": "Get Quote"
+  },
+  "hero": {
+    "title": "Finnish Excellence in Animal Nutrition",
+    "subtitle": "Premium feed solutions for optimal animal health and performance"
+  },
+  "finland": {
+    "badge": "Finnish Animal Nutrition",
+    "title": "Premium Feed.",
+    "highlight": "Global Reach.",
+    "description": "From our mills in Finland to farms across 5 continents — delivering consistent, high-performance nutrition for cattle, poultry, swine, and more.",
+    "stats": {
+      "years": "Years Experience",
+      "tons": "Tons per year"
+    },
+    "certified": "Certified by:",
+    "trustStatement": "From Finnish fields to global farms — <span class='text-emerald-600 font-bold'>nutrition that performs.</span>"
+  },
+  "products": {
+    "badge": "Our Feed Collection",
+    "title": "Nutrition by Animal",
+    "description": "Specialized formulas crafted for each species. Scroll to explore our complete range.",
+    "categories": {
+      "cattle": "Cattle",
+      "cattleSubtitle": "Bovine Range",
+      "sheepGoats": "Sheep & Goats",
+      "sheepGoatsSubtitle": "Ovine–Caprine Range",
+      "pigs": "Pigs",
+      "pigsSubtitle": "Porcine Range",
+      "rabbits": "Rabbits",
+      "rabbitsSubtitle": "Lagomorph Range",
+      "poultry": "Poultry",
+      "poultrySubtitle": "Poultry Range"
+    },
+    "card": {
+      "benefits": "Benefits",
+      "specs": "Specifications",
+      "origin": "Origin",
+      "protein": "Protein",
+      "energy": "Energy",
+      "fiber": "Fiber",
+      "pelletSize": "Pellet Size"
+    }
+  },
+  "partners": {
+    "badge": "Certifications",
+    "title": "Trusted Partners",
+    "subtitle": "Certifications & Associations"
+  },
+  "gallery": {
+    "badge": "Trust & Transparency",
+    "title": "Behind the Feed",
+    "description": "Step inside our world-class Finnish facilities where premium nutrition comes to life. Every pellet reflects our commitment to quality, innovation, and animal welfare.",
+    "stats": {
+      "years": "Years of Excellence",
+      "capacity": "Tons Annual Capacity",
+      "countries": "Countries Served",
+      "certified": "EU Certified"
+    }
+  },
+  "footer": {
+    "title": "Let's Talk",
+    "subtitle": "ABOUT YOUR FEED NEEDS",
+    "contact": "Contact",
+    "email": "info@feedelvi.fi",
+    "phone": "+358 12 345 6789",
+    "address": "FI-00000 Helsinki",
+    "country": "Finland",
+    "products": "Products",
+    "company": "Company",
+    "aboutUs": "About Us",
+    "facilities": "Our Facilities",
+    "sustainability": "Sustainability",
+    "quality": "Quality Standards",
+    "careers": "Careers",
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "© 2025 FeedElvi. All rights reserved."
+  },
+  "quoteForm": {
+    "title": "Get Your Quote",
+    "name": "Full Name",
+    "email": "Email",
+    "phone": "Phone",
+    "company": "Company",
+    "message": "Your Message",
+    "placeholder": "Tell us about your feed requirements...",
+    "submit": "Request Quote",
+    "sending": "Sending...",
+    "successTitle": "Quote Request Received!",
+    "successMessage": "Thank you for your interest. Our team will review your requirements and get back to you within 24 hours.",
+    "close": "Close"
+  },
+  "whatsapp": {
+    "tooltip": "Chat with us on WhatsApp",
+    "message": "Hello! I'm interested in learning more about your animal feed products."
+  },
+  "language": {
+    "en": "EN",
+    "fi": "FI",
+    "switch": "Switch language"
+  }
+}
