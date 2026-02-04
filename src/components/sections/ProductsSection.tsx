@@ -109,13 +109,6 @@ export function ProductsSection() {
           </div>
         ))}
       </div>
-
-      {/* Bottom Note */}
-      <div className="py-16 text-center bg-[#F0F4F0]">
-        <p className="text-sm text-[#8A9A8A]">
-          All products formulated with premium ingredients for optimal animal health
-        </p>
-      </div>
     </section>
   );
 }

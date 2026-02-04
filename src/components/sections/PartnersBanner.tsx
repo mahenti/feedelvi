@@ -14,87 +14,32 @@ const brandColors = [
   "#9B7CB6",    // Purple
 ];
 
-const textColors = [
-  "#FFFFFF",    // White
-  "#FFFFFF",    // White
-  "#2D3A2D",    // Dark text for light bg
-  "#2D3A2D",    // Dark text for light bg
-  "#FFFFFF",    // White
-];
-
 export function PartnersBanner() {
   return (
-    <section className="w-full">
+    <section className="w-full py-16 bg-gradient-to-b from-[#FAFBF8] to-white">
+      {/* Header */}
+      <div className="text-center mb-12">
+        <h3 className="text-4xl md:text-5xl font-black text-slate-800 uppercase tracking-wider mb-2">
+          TRUSTED PARTNERS
+        </h3>
+        <p className="text-slate-500 text-lg">Certifications & Associations</p>
+      </div>
+
       {/* Connected Partner Boxes - Full Width */}
       <div className="flex flex-col md:flex-row w-full">
         {partnerLogos.map((logo, index) => (
           <div
             key={index}
-            className="flex-1 min-h-[280px] flex flex-col items-center justify-center p-8 transition-all duration-300 hover:brightness-110"
+            className="flex-1 min-h-[280px] flex items-center justify-center p-8 transition-all duration-300 hover:brightness-110"
             style={{
               backgroundColor: brandColors[index],
             }}
           >
-            {/* Text Content */}
-            {index === 0 && (
-              <div className="text-center mb-6">
-                <h3 
-                  className="text-4xl md:text-5xl font-black uppercase tracking-wider"
-                  style={{ color: textColors[index] }}
-                >
-                  TRUSTED
-                </h3>
-              </div>
-            )}
-            {index === 1 && (
-              <div className="text-center mb-6">
-                <h3 
-                  className="text-4xl md:text-5xl font-black uppercase tracking-wider"
-                  style={{ color: textColors[index] }}
-                >
-                  PARTNERS
-                </h3>
-              </div>
-            )}
-            {index === 2 && (
-              <div className="text-center mb-6">
-                <h3 
-                  className="text-4xl md:text-5xl font-black uppercase tracking-wider"
-                  style={{ color: textColors[index] }}
-                >
-                  CERTIFICATIONS
-                </h3>
-              </div>
-            )}
-            {index === 3 && (
-              <div className="text-center mb-6">
-                <h3 
-                  className="text-4xl md:text-5xl font-black uppercase tracking-wider"
-                  style={{ color: textColors[index] }}
-                >
-                  &
-                </h3>
-                <p className="text-xs mt-2 opacity-80 uppercase tracking-widest" style={{ color: textColors[index] }}>
-                  and
-                </p>
-              </div>
-            )}
-            {index === 4 && (
-              <div className="text-center mb-6">
-                <h3 
-                  className="text-4xl md:text-5xl font-black uppercase tracking-wider"
-                  style={{ color: textColors[index] }}
-                >
-                  ASSOCIATIONS
-                </h3>
-              </div>
-            )}
-            
             {/* Logo */}
             <img
               src={logo.src}
               alt={logo.alt}
-              className="max-w-full max-h-24 w-auto h-auto object-contain rounded-2xl shadow-lg"
+              className="max-w-full max-h-32 w-auto h-auto object-contain rounded-2xl shadow-lg"
             />
           </div>
         ))}
