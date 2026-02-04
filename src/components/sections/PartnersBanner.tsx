@@ -19,7 +19,7 @@ export function PartnersBanner() {
     <section className="w-full py-16 bg-gradient-to-b from-[#FAFBF8] to-white" style={{ fontFamily: 'Onest, sans-serif' }}>
       {/* Header */}
       <div className="text-center mb-12">
-        <h3 className="text-5xl lg:text-6xl font-black text-slate-900 uppercase tracking-wider mb-6" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>
+        <h3 className="text-5xl lg:text-6xl font-black text-slate-900 tracking-wider mb-6" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>
           Trusted Partners
         </h3>
         <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
