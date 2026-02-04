@@ -1,7 +1,17 @@
 import { useTranslation } from "react-i18next";
+import { useState, useEffect } from "react";
 
 export function Hero() {
   const { t } = useTranslation();
+  const words = ["Nutrition", "Feed", "Pellet", "Growth"];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % words.length);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
   
   return (
     <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden">
@@ -23,7 +33,7 @@ export function Hero() {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white drop-shadow-2xl" style={{ fontFamily: 'Onest, sans-serif', textShadow: '4px 4px 8px rgba(0,0,0,0.5)' }}>
-            <span className="text-[#e7dbbf]">{t('hero.title').split(' ')[0]}</span> {t('hero.title').split(' ').slice(1).join(' ')}
+            <span className="text-[#e7dbbf]">{t('hero.title').split(' ')[0]}</span> {t('hero.title').split(' ').slice(1, -1).join(' ')} <span className="inline-block min-w-[200px] md:min-w-[280px] lg:min-w-[340px] text-left transition-all duration-300">{words[currentIndex]}</span>
           </h1>
         </div>
       </div>
