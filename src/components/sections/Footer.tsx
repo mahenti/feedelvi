@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function Footer() {
   return (
@@ -54,10 +55,10 @@ export function Footer() {
             <ul className="space-y-3" style={{ fontFamily: 'DM Sans, sans-serif' }}>
               {['Bovine Nutrition', 'Ovine-Caprine', 'Porcine Feed', 'Lagomorph', 'Poultry Range'].map((item) => (
                 <li key={item}>
-                  <a href="#" className="text-lg text-white/80 hover:text-[#e7dbbf] transition-colors flex items-center gap-2 group font-bold">
+                  <Link to="/products" className="text-lg text-white/80 hover:text-[#e7dbbf] transition-colors flex items-center gap-2 group font-bold">
                     {item}
                     <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -69,12 +70,17 @@ export function Footer() {
               Company
             </h3>
             <ul className="space-y-3" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-              {['About Us', 'Our Facilities', 'Sustainability', 'Quality Standards', 'Careers'].map((item) => (
+              <li>
+                <Link to="/about" className="text-lg text-white/80 hover:text-[#e7dbbf] transition-colors flex items-center gap-2 group font-bold">
+                  About Us
+                  <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+              </li>
+              {['Our Facilities', 'Sustainability', 'Quality Standards', 'Careers'].map((item) => (
                 <li key={item}>
-                  <a href="#" className="text-lg text-white/80 hover:text-[#e7dbbf] transition-colors flex items-center gap-2 group font-bold">
+                  <span className="text-lg text-white/80 font-bold">
                     {item}
-                    <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </a>
+                  </span>
                 </li>
               ))}
             </ul>
@@ -113,19 +119,19 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-[#205a40]">
-          <div className="text-2xl font-black tracking-tight">
+          <Link to="/" className="text-2xl font-black tracking-tight">
             FEED<span className="text-[#2d805b]">ELVI</span>
-          </div>
+          </Link>
           <p className="text-sm text-white/60">
             © 2026 FeedElvi. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-sm text-white/60 hover:text-[#e7dbbf] transition-colors">
+            <span className="text-sm text-white/60">
               Privacy
-            </a>
-            <a href="#" className="text-sm text-white/60 hover:text-[#e7dbbf] transition-colors">
+            </span>
+            <span className="text-sm text-white/60">
               Terms
-            </a>
+            </span>
           </div>
         </div>
       </div>
