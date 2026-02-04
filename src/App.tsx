@@ -12,6 +12,7 @@ import { ContactPage } from "./components/pages/ContactPage";
 import { ProductsPage } from "./components/pages/ProductsPage";
 import { QuoteForm } from "./components/QuoteForm";
 import { WhatsAppButton } from "./components/WhatsAppButton";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 function HomePage() {
   return (
@@ -30,6 +31,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-background">
         <Header onOpenQuote={() => setIsQuoteOpen(true)} />
         <Routes>
