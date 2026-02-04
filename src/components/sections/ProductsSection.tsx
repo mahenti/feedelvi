@@ -1,4 +1,5 @@
 import { ProductCard, type Product } from "@/components/ProductCard";
+import { Wheat } from "lucide-react";
 
 const products: Product[] = [
   // BOVINE RANGE
@@ -40,6 +41,10 @@ export function ProductsSection() {
       {/* Main Header */}
       <div className="py-16 lg:py-20 text-center">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-100 text-emerald-800 text-sm font-bold rounded-full mb-6">
+            <Wheat className="w-4 h-4" />
+            OUR FEED COLLECTION
+          </span>
           <h2 className="text-5xl lg:text-6xl font-black text-slate-900 mb-6" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>
             Nutrition by Animal
           </h2>
