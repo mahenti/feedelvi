@@ -34,7 +34,7 @@ export function PartnersBanner() {
       </div>
 
       {/* Connected Partner Boxes - Full Width, Single Line */}
-      <div className="flex flex-row w-full overflow-x-auto">
+      <div className="flex flex-row w-full overflow-x-auto overflow-y-hidden">
         {partnerLogos.map((logo, index) => (
           <div
             key={index}

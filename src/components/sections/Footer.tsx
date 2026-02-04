@@ -9,10 +9,10 @@ export function Footer() {
         
         {/* Top Section - Large Typography */}
         <div className="mb-20">
-          <h2 className="text-6xl md:text-7xl lg:text-8xl font-black leading-none mb-4">
+          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-none mb-4 break-words">
             Let's Talk
           </h2>
-          <p className="text-3xl md:text-4xl lg:text-5xl text-[#e7dbbf] uppercase" style={{ fontFamily: 'Onest, sans-serif', fontWeight: 900, letterSpacing: '0.05em' }}>
+          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#e7dbbf] uppercase break-words" style={{ fontFamily: 'Onest, sans-serif', fontWeight: 900, letterSpacing: '0.05em' }}>
             ABOUT YOUR FEED NEEDS
           </p>
         </div>
