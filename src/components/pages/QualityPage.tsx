@@ -1,20 +1,21 @@
 import { Shield, CheckCircle, Award, Microscope, FileCheck, TestTube } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const qualityProcesses = [
   {
     icon: Microscope,
-    title: "Raw Material Testing",
-    description: "Every incoming batch undergoes comprehensive analysis for nutritional content, contaminants, and quality parameters before entering production."
+    titleKey: "qualityPage.stage1Title",
+    descKey: "qualityPage.stage1Desc"
   },
   {
     icon: TestTube,
-    title: "In-Process Control",
-    description: "Real-time monitoring during production ensures consistent quality at every stage of the manufacturing process."
+    titleKey: "qualityPage.stage2Title",
+    descKey: "qualityPage.stage2Desc"
   },
   {
     icon: FileCheck,
-    title: "Final Product Verification",
-    description: "Finished products are tested against strict specifications before release, ensuring they meet or exceed customer expectations."
+    titleKey: "qualityPage.stage3Title",
+    descKey: "qualityPage.stage3Desc"
   }
 ];
 
@@ -37,6 +38,7 @@ const testingParameters = [
 ];
 
 export function QualityPage() {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-[#f5f0e4]" style={{ fontFamily: 'Onest, sans-serif' }}>
       {/* Hero Section */}
@@ -45,13 +47,13 @@ export function QualityPage() {
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 text-white text-sm font-bold rounded-full mb-6">
               <Shield className="w-4 h-4" />
-              QUALITY STANDARDS
+              {t('qualityPage.badge')}
             </span>
             <h1 className="text-5xl lg:text-7xl font-black mb-6 leading-tight">
-              Uncompromising<br />Quality
+              {t('qualityPage.title')}
             </h1>
             <p className="text-xl lg:text-2xl text-white/90 leading-relaxed">
-              Every batch tested. Every standard exceeded. Quality is not just a promise—it's our process.
+              {t('qualityPage.subtitle')}
             </p>
           </div>
         </div>
@@ -63,22 +65,22 @@ export function QualityPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl lg:text-5xl font-black text-[#133425] mb-6">
-                Quality Without<br />
-                <span className="text-[#2d805b]">Compromise</span>
+                {t('qualityPage.promiseTitle')}<br />
+                <span className="text-[#2d805b]">{t('qualityPage.promiseHighlight')}</span>
               </h2>
               <p className="text-lg text-[#5a6b5a] leading-relaxed mb-6">
-                At FeedElvi, quality is the foundation of everything we do. Our comprehensive quality management system ensures that every product leaving our facility meets the highest standards of safety, nutrition, and consistency.
+                {t('qualityPage.promiseDesc')}
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-[#205a40] rounded-xl p-6 text-center">
                   <Award className="w-8 h-8 text-white mx-auto mb-2" />
-                  <div className="text-3xl font-black text-white">100%</div>
-                  <div className="text-white/80 text-sm">Batch Tested</div>
+                  <div className="text-3xl font-black text-white">{t('qualityPage.batchTested')}</div>
+                  <div className="text-white/80 text-sm">{t('qualityPage.batchTestedLabel')}</div>
                 </div>
                 <div className="bg-[#133425] rounded-xl p-6 text-center">
                   <CheckCircle className="w-8 h-8 text-white mx-auto mb-2" />
-                  <div className="text-3xl font-black text-white">ISO</div>
-                  <div className="text-white/80 text-sm">9001 Certified</div>
+                  <div className="text-3xl font-black text-white">{t('qualityPage.isoCertified')}</div>
+                  <div className="text-white/80 text-sm">{t('qualityPage.isoLabel')}</div>
                 </div>
               </div>
             </div>
@@ -98,10 +100,10 @@ export function QualityPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-white mb-6">
-              Our Quality Process
+              {t('qualityPage.processTitle')}
             </h2>
             <p className="text-lg text-white/70 max-w-2xl mx-auto">
-              A three-stage quality assurance system ensures product integrity from raw materials to finished feed.
+              {t('qualityPage.processDesc')}
             </p>
           </div>
           
@@ -114,8 +116,8 @@ export function QualityPage() {
                 <div className="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-6 mt-2">
                   <process.icon className="w-7 h-7 text-[#e7dbbf]" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">{process.title}</h3>
-                <p className="text-white/80 leading-relaxed">{process.description}</p>
+                <h3 className="text-xl font-bold text-white mb-4">{t(process.titleKey)}</h3>
+                <p className="text-white/80 leading-relaxed">{t(process.descKey)}</p>
               </div>
             ))}
           </div>
@@ -127,10 +129,10 @@ export function QualityPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-[#133425] mb-6">
-              Certifications & Standards
+              {t('qualityPage.certificationsTitle')}
             </h2>
             <p className="text-lg text-[#5a6b5a] max-w-2xl mx-auto">
-              Our certifications represent independent validation of our commitment to quality and safety.
+              {t('qualityPage.certificationsDesc')}
             </p>
           </div>
           
@@ -154,10 +156,10 @@ export function QualityPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl lg:text-5xl font-black text-white mb-6">
-                Comprehensive<br />Testing
+                {t('qualityPage.testingTitle')}
               </h2>
               <p className="text-lg text-white/80 leading-relaxed mb-8">
-                Our in-house laboratory is equipped with advanced analytical instruments to perform comprehensive testing on every batch of feed we produce.
+                {t('qualityPage.testingDesc')}
               </p>
               <ul className="space-y-4">
                 {testingParameters.map((param, index) => (
@@ -171,11 +173,11 @@ export function QualityPage() {
               </ul>
             </div>
             <div className="bg-white rounded-3xl p-8 shadow-xl">
-              <h3 className="text-2xl font-bold text-[#133425] mb-6 text-center">Quality Metrics</h3>
+              <h3 className="text-2xl font-bold text-[#133425] mb-6 text-center">{t('qualityPage.metricsTitle')}</h3>
               <div className="space-y-6">
                 <div>
                   <div className="flex justify-between mb-2">
-                    <span className="text-[#5a6b5a] font-medium">Batch Acceptance Rate</span>
+                    <span className="text-[#5a6b5a] font-medium">{t('qualityPage.batchAcceptance')}</span>
                     <span className="text-[#205a40] font-bold">99.7%</span>
                   </div>
                   <div className="w-full bg-[#f5f0e4] rounded-full h-3">
@@ -184,7 +186,7 @@ export function QualityPage() {
                 </div>
                 <div>
                   <div className="flex justify-between mb-2">
-                    <span className="text-[#5a6b5a] font-medium">Customer Satisfaction</span>
+                    <span className="text-[#5a6b5a] font-medium">{t('qualityPage.satisfaction')}</span>
                     <span className="text-[#205a40] font-bold">98.5%</span>
                   </div>
                   <div className="w-full bg-[#f5f0e4] rounded-full h-3">
@@ -193,7 +195,7 @@ export function QualityPage() {
                 </div>
                 <div>
                   <div className="flex justify-between mb-2">
-                    <span className="text-[#5a6b5a] font-medium">On-Time Delivery</span>
+                    <span className="text-[#5a6b5a] font-medium">{t('qualityPage.delivery')}</span>
                     <span className="text-[#205a40] font-bold">96.8%</span>
                   </div>
                   <div className="w-full bg-[#f5f0e4] rounded-full h-3">
@@ -202,7 +204,7 @@ export function QualityPage() {
                 </div>
                 <div>
                   <div className="flex justify-between mb-2">
-                    <span className="text-[#5a6b5a] font-medium">Product Consistency</span>
+                    <span className="text-[#5a6b5a] font-medium">{t('qualityPage.consistency')}</span>
                     <span className="text-[#205a40] font-bold">99.2%</span>
                   </div>
                   <div className="w-full bg-[#f5f0e4] rounded-full h-3">

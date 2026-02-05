@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ProductCard, type Product } from "@/components/ProductCard";
 import { Wheat, Filter } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const products: Product[] = [
   // BOVINE RANGE
@@ -20,17 +21,18 @@ const products: Product[] = [
   { id: 10, name: "Waterfowl Growth Nutrition", description: "Balanced feed developed specifically for ducks and geese to support healthy growth and vitality.", benefits: ["Supports strong skeletal growth", "Adapted for waterfowl digestion", "Consistent daily nutrition"], category: "poultry", form: "Pellets", animalType: "duck", productImage: "/d1.JPG", specs: { pelletSize: "4-5mm", protein: "18-20%", energy: "12.2 MJ/kg", fiber: "6-8%", origin: "Finland" } },
 ];
 
-const categories = [
-  { id: "all", label: "All Products" },
-  { id: "bovine", label: "Cattle" },
-  { id: "ovine-caprine", label: "Sheep & Goats" },
-  { id: "porcine", label: "Pigs" },
-  { id: "lagomorph", label: "Rabbits" },
-  { id: "poultry", label: "Poultry" },
-];
-
 export function ProductsPage() {
+  const { t } = useTranslation();
   const [activeCategory, setActiveCategory] = useState("all");
+
+  const categories = [
+    { id: "all", label: t('productsPage.allProducts') },
+    { id: "bovine", label: t('productsPage.cattle') },
+    { id: "ovine-caprine", label: t('productsPage.sheepGoats') },
+    { id: "porcine", label: t('productsPage.pigs') },
+    { id: "lagomorph", label: t('productsPage.rabbits') },
+    { id: "poultry", label: t('productsPage.poultry') },
+  ];
 
   const filteredProducts = activeCategory === "all" 
     ? products 
@@ -44,14 +46,13 @@ export function ProductsPage() {
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 text-white text-sm font-bold rounded-full mb-6">
               <Wheat className="w-4 h-4" />
-              OUR PRODUCTS
+              {t('productsPage.badge')}
             </span>
             <h1 className="text-5xl lg:text-7xl font-black mb-6 leading-tight">
-              Animal Nutrition
+              {t('productsPage.title')}
             </h1>
             <p className="text-xl lg:text-2xl text-white/90 leading-relaxed">
-              Premium Finnish feed formulations for every species. 
-              Scientifically crafted for optimal health and performance.
+              {t('productsPage.subtitle')}
             </p>
           </div>
         </div>
@@ -90,7 +91,7 @@ export function ProductsPage() {
           
           {filteredProducts.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-xl text-[#5a6b5a]">No products found in this category.</p>
+              <p className="text-xl text-[#5a6b5a]">{t('productsPage.noProducts')}</p>
             </div>
           )}
         </div>
@@ -100,11 +101,10 @@ export function ProductsPage() {
       <section className="bg-[#133425] py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-black text-white mb-6">
-            The Finnish Quality Promise
+            {t('productsPage.qualityTitle')}
           </h2>
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
-            Every product is manufactured in Finland under strict EU regulations, 
-            ensuring the highest standards of quality, safety, and nutritional excellence.
+            {t('productsPage.qualityText')}
           </p>
         </div>
       </section>

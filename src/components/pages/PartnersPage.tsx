@@ -1,4 +1,5 @@
 import { Award, Shield, CheckCircle, Globe, Factory } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const partners = [
   { src: "/partners/partners (1).jpg", alt: "Partner 1" },
@@ -37,6 +38,7 @@ const exportMarkets = [
 ];
 
 export function PartnersPage() {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-[#f5f0e4]" style={{ fontFamily: 'Onest, sans-serif' }}>
       {/* Hero Section */}
@@ -45,13 +47,13 @@ export function PartnersPage() {
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 text-white text-sm font-bold rounded-full mb-6">
               <Award className="w-4 h-4" />
-              CERTIFICATIONS & PARTNERS
+              {t('partnersPage.badge')}
             </span>
             <h1 className="text-5xl lg:text-7xl font-black mb-6 leading-tight">
-              Trusted Partners
+              {t('partnersPage.title')}
             </h1>
             <p className="text-xl lg:text-2xl text-white/90 leading-relaxed">
-              Certified by leading international standards. Trusted by farms across 25+ countries.
+              {t('partnersPage.subtitle')}
             </p>
           </div>
         </div>
@@ -62,10 +64,10 @@ export function PartnersPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-[#133425] mb-6">
-              Our Certification Partners
+              {t('partnersPage.partnersTitle')}
             </h2>
             <p className="text-lg text-[#5a6b5a] max-w-2xl mx-auto">
-              We work with internationally recognized certification bodies to ensure the highest standards of quality and safety.
+              {t('partnersPage.partnersDesc')}
             </p>
           </div>
           
@@ -92,10 +94,10 @@ export function PartnersPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-white mb-6">
-              Our Certifications
+              {t('partnersPage.certificationsTitle')}
             </h2>
             <p className="text-lg text-white/70 max-w-2xl mx-auto">
-              Every certification represents our commitment to excellence, safety, and transparency in animal nutrition.
+              {t('partnersPage.certificationsDesc')}
             </p>
           </div>
           
@@ -127,29 +129,29 @@ export function PartnersPage() {
             <div>
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-100 text-emerald-800 text-sm font-bold rounded-full mb-6">
                 <Globe className="w-4 h-4" />
-                GLOBAL REACH
+                {t('partnersPage.exportBadge')}
               </span>
               <h2 className="text-4xl lg:text-5xl font-black text-[#133425] mb-6">
-                Serving Markets<br />
-                <span className="text-[#2d805b]">Across Europe</span>
+                {t('partnersPage.exportTitle')}<br />
+                <span className="text-[#2d805b]">{t('partnersPage.exportHighlight')}</span>
               </h2>
               <p className="text-lg text-[#5a6b5a] leading-relaxed mb-6">
-                From our base in Finland, we export premium animal feed to farms and distributors across Northern Europe and beyond. Our logistics network ensures timely delivery and consistent quality.
+                {t('partnersPage.exportDesc')}
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-[#205a40] text-white rounded-xl p-6 text-center">
                   <div className="text-4xl font-black mb-2">25+</div>
-                  <div className="text-white/80">Countries Served</div>
+                  <div className="text-white/80">{t('partnersPage.countriesServed')}</div>
                 </div>
                 <div className="bg-[#133425] text-white rounded-xl p-6 text-center">
                   <div className="text-4xl font-black mb-2">100%</div>
-                  <div className="text-white/80">EU Compliant</div>
+                  <div className="text-white/80">{t('partnersPage.euCompliant')}</div>
                 </div>
               </div>
             </div>
             
             <div className="bg-white rounded-3xl p-8 shadow-xl">
-              <h3 className="text-2xl font-bold text-[#133425] mb-6 text-center">Export Markets</h3>
+              <h3 className="text-2xl font-bold text-[#133425] mb-6 text-center">{t('partnersPage.exportMarketsTitle')}</h3>
               <div className="flex flex-wrap gap-3 justify-center">
                 {exportMarkets.map((market, index) => (
                   <span 
@@ -169,16 +171,16 @@ export function PartnersPage() {
       <section className="bg-[#205a40] py-20">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl lg:text-5xl font-black text-white mb-6">
-            Become a Partner
+            {t('partnersPage.ctaTitle')}
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            Interested in distributing FeedElvi products in your region? Let's discuss partnership opportunities.
+            {t('partnersPage.ctaText')}
           </p>
           <a 
             href="/contact"
             className="inline-block bg-white text-[#205a40] px-8 py-4 rounded-full font-bold text-lg hover:bg-[#e7dbbf] transition-colors"
           >
-            Contact Us
+            {t('partnersPage.ctaButton')}
           </a>
         </div>
       </section>

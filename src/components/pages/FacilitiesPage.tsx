@@ -1,4 +1,5 @@
 import { Factory, MapPin, Shield, Users, Award, Truck } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const facilityImages = [
   { src: '/gallery/z3.jpg', title: 'Main Production Facility', description: 'Our state-of-the-art production plant in Finland' },
@@ -17,6 +18,7 @@ const capabilities = [
 ];
 
 export function FacilitiesPage() {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-[#f5f0e4]" style={{ fontFamily: 'Onest, sans-serif' }}>
       {/* Hero Section */}
@@ -25,13 +27,13 @@ export function FacilitiesPage() {
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 text-white text-sm font-bold rounded-full mb-6">
               <Factory className="w-4 h-4" />
-              OUR FACILITIES
+              {t('facilitiesPage.badge')}
             </span>
             <h1 className="text-5xl lg:text-7xl font-black mb-6 leading-tight">
-              World-Class<br />Production
+              {t('facilitiesPage.title')}
             </h1>
             <p className="text-xl lg:text-2xl text-white/90 leading-relaxed">
-              State-of-the-art manufacturing facilities in Finland, designed for quality, efficiency, and sustainability.
+              {t('facilitiesPage.subtitle')}
             </p>
           </div>
         </div>
@@ -43,15 +45,15 @@ export function FacilitiesPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
             <div>
               <h2 className="text-4xl lg:text-5xl font-black text-[#133425] mb-6">
-                Finnish Engineering.<br />
-                <span className="text-[#2d805b]">Global Standards.</span>
+                {t('facilitiesPage.overviewTitle')}<br />
+                <span className="text-[#2d805b]">{t('facilitiesPage.overviewHighlight')}</span>
               </h2>
               <p className="text-lg text-[#5a6b5a] leading-relaxed mb-6">
-                Our main production facility is located in Finland, strategically positioned to serve both domestic and international markets. The plant features the latest technology in feed processing and quality control.
+                {t('facilitiesPage.overviewDesc')}
               </p>
               <div className="flex items-center gap-3 text-[#5a6b5a]">
                 <MapPin className="w-5 h-5 text-[#2d805b]" />
-                <span className="font-semibold">Helsinki Region, Finland</span>
+                <span className="font-semibold">{t('facilitiesPage.location')}</span>
               </div>
             </div>
             <div className="bg-[#133425] rounded-3xl p-4">
@@ -85,10 +87,10 @@ export function FacilitiesPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-white mb-6">
-              Facility Gallery
+              {t('facilitiesPage.galleryTitle')}
             </h2>
             <p className="text-lg text-white/70 max-w-2xl mx-auto">
-              Take a virtual tour of our production facilities and see where quality feed is made.
+              {t('facilitiesPage.galleryDesc')}
             </p>
           </div>
           
@@ -117,18 +119,18 @@ export function FacilitiesPage() {
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
               <h2 className="text-4xl lg:text-5xl font-black text-[#133425] mb-6">
-                Advanced<br />Technology
+                {t('facilitiesPage.techTitle')}
               </h2>
               <p className="text-lg text-[#5a6b5a] leading-relaxed mb-6">
-                Our facility is equipped with cutting-edge technology for every stage of production:
+                {t('facilitiesPage.techDesc')}
               </p>
               <ul className="space-y-4">
                 {[
-                  "Automated batching and mixing systems",
-                  "High-capacity pelleting mills",
-                  "Real-time quality monitoring",
-                  "Climate-controlled storage",
-                  "Advanced laboratory equipment"
+                  t('facilitiesPage.techItem1'),
+                  t('facilitiesPage.techItem2'),
+                  t('facilitiesPage.techItem3'),
+                  t('facilitiesPage.techItem4'),
+                  t('facilitiesPage.techItem5')
                 ].map((item, index) => (
                   <li key={index} className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-[#2d805b] rounded-full" />
@@ -141,23 +143,23 @@ export function FacilitiesPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-[#f5f0e4] rounded-xl p-6 text-center">
                   <Truck className="w-8 h-8 text-[#205a40] mx-auto mb-2" />
-                  <div className="text-2xl font-black text-[#133425]">24/7</div>
-                  <div className="text-sm text-[#5a6b5a]">Operations</div>
+                  <div className="text-2xl font-black text-[#133425]">{t('facilitiesPage.ops24')}</div>
+                  <div className="text-sm text-[#5a6b5a]">{t('facilitiesPage.opsLabel')}</div>
                 </div>
                 <div className="bg-[#f5f0e4] rounded-xl p-6 text-center">
                   <Factory className="w-8 h-8 text-[#205a40] mx-auto mb-2" />
-                  <div className="text-2xl font-black text-[#133425]">6</div>
-                  <div className="text-sm text-[#5a6b5a]">Production Lines</div>
+                  <div className="text-2xl font-black text-[#133425]">{t('facilitiesPage.lines')}</div>
+                  <div className="text-sm text-[#5a6b5a]">{t('facilitiesPage.linesLabel')}</div>
                 </div>
                 <div className="bg-[#f5f0e4] rounded-xl p-6 text-center">
                   <Shield className="w-8 h-8 text-[#205a40] mx-auto mb-2" />
-                  <div className="text-2xl font-black text-[#133425]">99.9%</div>
-                  <div className="text-sm text-[#5a6b5a]">Quality Rate</div>
+                  <div className="text-2xl font-black text-[#133425]">{t('facilitiesPage.qualityRate')}</div>
+                  <div className="text-sm text-[#5a6b5a]">{t('facilitiesPage.qualityLabel')}</div>
                 </div>
                 <div className="bg-[#f5f0e4] rounded-xl p-6 text-center">
                   <Users className="w-8 h-8 text-[#205a40] mx-auto mb-2" />
-                  <div className="text-2xl font-black text-[#133425]">20+</div>
-                  <div className="text-sm text-[#5a6b5a]">R&D Team</div>
+                  <div className="text-2xl font-black text-[#133425]">{t('facilitiesPage.rdTeam')}</div>
+                  <div className="text-sm text-[#5a6b5a]">{t('facilitiesPage.rdLabel')}</div>
                 </div>
               </div>
             </div>
