@@ -53,7 +53,7 @@ export function Header({ onOpenQuote }: HeaderProps) {
               {t('nav.about')}
             </Link>
             <Link to="/partners" className="text-white font-bold hover:text-[#e7dbbf] transition-colors drop-shadow-lg text-sm lg:text-base">
-              Partners
+              {t('nav.partners')}
             </Link>
             <Link to="/contact" className="text-white font-bold hover:text-[#e7dbbf] transition-colors drop-shadow-lg text-sm lg:text-base">
               {t('nav.contact')}
@@ -92,11 +92,11 @@ export function Header({ onOpenQuote }: HeaderProps) {
 
     {/* Mobile Menu Overlay */}
     {mobileMenuOpen && (
-      <div className="fixed inset-0 z-40 bg-[#133425]/95 backdrop-blur-lg md:hidden">
-        <div className="flex flex-col items-center justify-center h-full gap-8 pt-20">
+      <div className="fixed inset-0 z-40 bg-[#133425]/95 backdrop-blur-lg md:hidden overflow-hidden">
+        <div className="flex flex-col items-center justify-center h-full gap-6 sm:gap-8 pt-16 px-4 overflow-y-auto">
           <button
             onClick={toggleLanguage}
-            className="flex items-center gap-2 text-white font-bold hover:text-[#e7dbbf] transition-colors px-4 py-2 rounded-full border border-white/30 mb-4"
+            className="flex items-center gap-2 text-white font-bold hover:text-[#e7dbbf] transition-colors px-4 py-2 rounded-full border border-white/30 mb-2"
           >
             <Globe className="w-5 h-5" />
             <span>{i18n.language.startsWith('fi') ? 'Suomi' : 'English'}</span>
@@ -104,28 +104,28 @@ export function Header({ onOpenQuote }: HeaderProps) {
           <Link 
             to="/products" 
             onClick={() => setMobileMenuOpen(false)}
-            className="text-white text-2xl font-bold hover:text-[#e7dbbf] transition-colors"
+            className="text-white text-xl sm:text-2xl font-bold hover:text-[#e7dbbf] transition-colors break-words text-center"
           >
             {t('nav.products')}
           </Link>
           <Link 
             to="/about" 
             onClick={() => setMobileMenuOpen(false)}
-            className="text-white text-2xl font-bold hover:text-[#e7dbbf] transition-colors"
+            className="text-white text-xl sm:text-2xl font-bold hover:text-[#e7dbbf] transition-colors break-words text-center"
           >
             {t('nav.about')}
           </Link>
           <Link 
             to="/partners" 
             onClick={() => setMobileMenuOpen(false)}
-            className="text-white text-2xl font-bold hover:text-[#e7dbbf] transition-colors"
+            className="text-white text-xl sm:text-2xl font-bold hover:text-[#e7dbbf] transition-colors break-words text-center"
           >
-            Partners
+            {t('nav.partners')}
           </Link>
           <Link 
             to="/contact" 
             onClick={() => setMobileMenuOpen(false)}
-            className="text-white text-2xl font-bold hover:text-[#e7dbbf] transition-colors"
+            className="text-white text-xl sm:text-2xl font-bold hover:text-[#e7dbbf] transition-colors break-words text-center"
           >
             {t('nav.contact')}
           </Link>
@@ -134,7 +134,7 @@ export function Header({ onOpenQuote }: HeaderProps) {
               setMobileMenuOpen(false);
               onOpenQuote();
             }}
-            className="bg-white hover:bg-[#e7dbbf] text-[#205a40] px-8 py-3 rounded-full font-black text-lg uppercase tracking-wide transition-all mt-4"
+            className="bg-white hover:bg-[#e7dbbf] text-[#205a40] px-6 sm:px-8 py-3 rounded-full font-black text-base sm:text-lg uppercase tracking-wide transition-all mt-2"
           >
             {t('nav.getQuote')}
           </button>

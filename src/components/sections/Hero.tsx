@@ -47,17 +47,17 @@ export function Hero() {
       <div className="absolute inset-0 bg-black/40" />
 
       {/* Content container */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-6xl mx-auto text-center">
           <h1 
-            className="text-5xl md:text-7xl lg:text-8xl font-black text-white drop-shadow-2xl flex flex-wrap items-center justify-center gap-x-4 gap-y-2" 
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white drop-shadow-2xl flex flex-wrap items-center justify-center gap-x-3 sm:gap-x-4 gap-y-2 break-words" 
             style={{ fontFamily: 'Onest, sans-serif', textShadow: '4px 4px 8px rgba(0,0,0,0.5)' }}
           >
-            <span className="text-[#e7dbbf]">{t('hero.title').split(' ')[0]}</span>
-            <span className="text-white">{t('hero.title').split(' ').slice(1, 3).join(' ')}</span>
-            <span className="text-white">Animal</span>
+            <span className="text-[#e7dbbf] break-words">{t('hero.title').split(' ')[0]}</span>
+            <span className="text-white break-words">{t('hero.title').split(' ').slice(1, 3).join(' ')}</span>
+            <span className="text-white break-words">Animal</span>
             <span 
-              className="inline-block transition-all duration-300"
+              className="inline-block transition-all duration-300 break-words"
               style={{
                 transform: isFlipping ? 'rotateX(-90deg)' : 'rotateX(0deg)',
                 transformOrigin: 'center bottom',

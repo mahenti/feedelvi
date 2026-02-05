@@ -10,11 +10,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Onest:wght@100..900&display=swap" rel="stylesheet" />
     <style>
-      body {
+      html, body {
         font-family: 'Onest', sans-serif;
+        overflow-x: hidden;
+        max-width: 100vw;
       }
       .font-dm-sans {
         font-family: 'DM Sans', sans-serif;
+      }
+      /* Ensure long words break properly for translations */
+      * {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
       }
     </style>
   </head>
