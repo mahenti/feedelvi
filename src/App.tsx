@@ -15,6 +15,7 @@ import { FacilitiesPage } from "./components/pages/FacilitiesPage";
 import { SustainabilityPage } from "./components/pages/SustainabilityPage";
 import { QualityPage } from "./components/pages/QualityPage";
 import { CareersPage } from "./components/pages/CareersPage";
+import { DistributorsPage } from "./components/pages/DistributorsPage";
 import { QuoteForm } from "./components/QuoteForm";
 import { WhatsAppButton } from "./components/WhatsAppButton";
 import { ScrollToTop } from "./components/ScrollToTop";
@@ -49,6 +50,7 @@ function App() {
           <Route path="/sustainability" element={<SustainabilityPage />} />
           <Route path="/quality" element={<QualityPage />} />
           <Route path="/careers" element={<CareersPage />} />
+          <Route path="/distributors" element={<DistributorsPage />} />
         </Routes>
         <Footer />
         <QuoteForm isOpen={isQuoteOpen} onClose={() => setIsQuoteOpen(false)} />

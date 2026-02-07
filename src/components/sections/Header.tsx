@@ -55,6 +55,9 @@ export function Header({ onOpenQuote }: HeaderProps) {
             <Link to="/partners" className="text-white font-bold hover:text-[#e7dbbf] transition-colors drop-shadow-lg text-sm lg:text-base">
               {t('nav.partners')}
             </Link>
+            <Link to="/distributors" className="text-white font-bold hover:text-[#e7dbbf] transition-colors drop-shadow-lg text-sm lg:text-base">
+              {t('nav.distributors')}
+            </Link>
             <Link to="/contact" className="text-white font-bold hover:text-[#e7dbbf] transition-colors drop-shadow-lg text-sm lg:text-base">
               {t('nav.contact')}
             </Link>
@@ -121,6 +124,13 @@ export function Header({ onOpenQuote }: HeaderProps) {
             className="text-white text-xl sm:text-2xl font-bold hover:text-[#e7dbbf] transition-colors break-words text-center"
           >
             {t('nav.partners')}
+          </Link>
+          <Link 
+            to="/distributors" 
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-white text-xl sm:text-2xl font-bold hover:text-[#e7dbbf] transition-colors break-words text-center"
+          >
+            {t('nav.distributors')}
           </Link>
           <Link 
             to="/contact" 
